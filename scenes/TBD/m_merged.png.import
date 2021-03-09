@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/black_death_right.png-a24670ab36e9d8a42c890096f105c6a0.stex"
+path="res://.import/m_merged.png-8a8995314ef21030e44af6361ac51216.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Sprites/reaper/black_death_right.png"
-dest_files=[ "res://.import/black_death_right.png-a24670ab36e9d8a42c890096f105c6a0.stex" ]
+source_file="res://scenes/TBD/m_merged.png"
+dest_files=[ "res://.import/m_merged.png-8a8995314ef21030e44af6361ac51216.stex" ]
 
 [params]
 
