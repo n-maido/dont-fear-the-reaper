@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/m_merged.png-8a8995314ef21030e44af6361ac51216.stex"
+path="res://.import/tbd_left_right.png-02d6c51debc75d2282261ad9450d55b3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/TBD/m_merged.png"
-dest_files=[ "res://.import/m_merged.png-8a8995314ef21030e44af6361ac51216.stex" ]
+source_file="res://Sprites/TBD/tbd_left_right.png"
+dest_files=[ "res://.import/tbd_left_right.png-02d6c51debc75d2282261ad9450d55b3.stex" ]
 
 [params]
 

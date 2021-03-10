@@ -7,7 +7,7 @@ const MAX_SPEED = 450
 const FRICTION = 15
 var vel = Vector2.ZERO		# velocity - how many pixels/second we are moving
 
-onready var animationPlayer = get_node("AnimationPlayer")
+onready var animationPlayer = get_node("ReaperAnimation")
 
 # _physics_process function is called 60 times a second
 func _physics_process(delta):
