@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/reaper/ReaperAnimated.tres.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 33.1045, 43.0575 )
+extents = Vector2( 31.2101, 23.1862 )
 
 [sub_resource type="Animation" id=2]
 length = 0.3
@@ -44,9 +44,10 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 6
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 9 )
+position = Vector2( 0.342346, 27.4868 )
 scale = Vector2( 1.04915, 1.18325 )
 shape = SubResource( 1 )
 
