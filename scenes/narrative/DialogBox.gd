@@ -32,18 +32,18 @@ func load_dialog():
 	
 	if dialog_index == dialog.size() - 1:
 		$NextButton.visible = false
-		$SkipText.bbcode_text = 'Start Game'
+		$SkipButton/SkipText.bbcode_text = 'Start Game'
 	else:
 		$NextButton.visible = true
-		$SkipText.bbcode_text = 'Skip Intro'
+		$SkipButton/SkipText.bbcode_text = 'Skip Intro'
 	# check if index is in range
 	if dialog_index < dialog.size():
 		finished = false
-		$DialogText.bbcode_text = dialog[dialog_index] # use bbcode so we can style it
-		$DialogText.percent_visible = 0 # hide the text when we change it
+		$TextBorder/DialogText.bbcode_text = dialog[dialog_index] # use bbcode so we can style it
+		$TextBorder/DialogText.percent_visible = 0 # hide the text when we change it
 		# Use tween to animate the text, so that we display the phrase 1 char at a time
 		$Tween.interpolate_property(
-			$DialogText, "percent_visible", 0, 1, 1, 
+			$TextBorder/DialogText, "percent_visible", 0, 1, 1, 
 			Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
 		)
 		$Tween.start()
@@ -81,3 +81,7 @@ func _on_BackButton_pressed():
 #	back = true
 	dialog_index -= 1
 	load_dialog()
+
+
+func _on_SkipButton_pressed():
+	pass # Replace with function body.
