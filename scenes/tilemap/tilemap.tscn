@@ -3,6 +3,7 @@
 [ext_resource path="res://scenes/tilemap/tilemap.tres" type="TileSet" id=1]
 
 [node name="tilemap" type="Node2D"]
+use_parent_material = true
 
 [node name="Floor" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
