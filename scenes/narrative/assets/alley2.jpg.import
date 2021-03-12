@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mainlevbuild copy.png-184e3fc78c6fb9475044069e4ad0dabc.stex"
+path="res://.import/alley2.jpg-b636df97b13e073bcf243f4ee7d192a6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/narrative/mainlevbuild copy.png"
-dest_files=[ "res://.import/mainlevbuild copy.png-184e3fc78c6fb9475044069e4ad0dabc.stex" ]
+source_file="res://scenes/narrative/assets/alley2.jpg"
+dest_files=[ "res://.import/alley2.jpg-b636df97b13e073bcf243f4ee7d192a6.stex" ]
 
 [params]
 
