@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=24 format=2]
+[gd_resource type="TileSet" load_steps=23 format=2]
 
 [ext_resource path="res://scenes/tilemap/assets/RF_Catacombs_v1/mainlevbuild.png" type="Texture" id=1]
 [ext_resource path="res://scenes/tilemap/assets/RF_Catacombs_v1/torch_1.png" type="Texture" id=2]
@@ -12,9 +12,6 @@ points = PoolVector2Array( 128, 80, 0, 80, 0, 0, 128, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 160, 48, 0, 48, 0, 0, 160, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=4]
-points = PoolVector2Array( 0, 80, 0, 16, 16, 0, 64, 0, 80, 16, 80, 80, 64, 80, 64, 16, 16, 16, 16, 80 )
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 80, 80, 0, 80, 0, 0, 80, 0 )
@@ -438,17 +435,10 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 16, 0, 16 )
 19/navigation_offset = Vector2( 0, 0 )
 19/shape_offset = Vector2( 0, 0 )
 19/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-19/shape = SubResource( 4 )
 19/shape_one_way = false
-19/shape_one_way_margin = 1.0
-19/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 4 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-19/z_index = 0
+19/shape_one_way_margin = 0.0
+19/shapes = [  ]
+19/z_index = 2
 20/name = "grate-big"
 20/texture = ExtResource( 1 )
 20/tex_offset = Vector2( 0, 0 )
