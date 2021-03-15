@@ -41,10 +41,13 @@ tracks/0/keys = {
 [sub_resource type="CircleShape2D" id=4]
 radius = 248.832
 
-[node name="TBDIndependent" type="KinematicBody2D"]
+[node name="TBDIndependent" type="KinematicBody2D" groups=[
+"tbd-independent",
+]]
 script = ExtResource( 1 )
 
 [node name="TBDBox" type="Area2D" parent="."]
+scale = Vector2( 1.09514, -1.06029 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TBDBox"]
 position = Vector2( -3.38678, 0.842558 )
@@ -73,5 +76,4 @@ shape = SubResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
-[connection signal="body_entered" from="TBDBox" to="." method="_on_TBDBox_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

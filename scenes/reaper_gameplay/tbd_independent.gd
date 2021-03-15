@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const GRAVITY = 10
-var speed = 200
+var speed = 100
 const FLOOR = Vector2(0, -1)
 
 var velocity = Vector2()
@@ -11,7 +11,7 @@ var x_speed
 var y_speed
 var coin_flip #determines which direction and which axis to move on
 var reaper_detected = false
-var collider
+
 
 const FRICTION = 15
 
@@ -44,6 +44,10 @@ func _physics_process(delta):
 		
 	velocity = move_and_slide(velocity)
 	
+	for i in range(get_slide_count() - 1):
+		var collision = get_slide_collision(i)
+		print(collision.collider.name)
+	
 	if is_on_wall() or reaper_detected:
 		reaper_detected = false
 		direction = direction * -1
@@ -55,6 +59,8 @@ func _physics_process(delta):
 			y_speed = speed
 			x_speed = 0
 	
+	
+		
 func heads_or_tails():
 	var result = randi()
 	print("result: ", result)
@@ -69,9 +75,3 @@ func _on_Area2D_body_entered(body):
 	print("reaper detected")
 	
 
-
-func _on_TBDBox_entered(body):
-	#load win screen
-	collider = body.get_parent()
-	if collider.is_in_group("reaper-player"):
-		print("caught by reaper!")

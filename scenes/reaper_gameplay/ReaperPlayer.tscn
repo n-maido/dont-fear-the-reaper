@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/reaper_gameplay/ReaperPlayer.gd" type="Script" id=1]
 [ext_resource path="res://scenes/tilemap/tilemap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/reaper/ReaperAnimated.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 35.0233, 59.3053 )
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -20,9 +23,24 @@ script = ExtResource( 1 )
 position = Vector2( 238.88, 141.161 )
 scale = Vector2( 0.410661, 0.392031 )
 
+[node name="ReaperArea" type="Area2D" parent="tilemap/ReaperAnimate"]
+position = Vector2( -1.34998, -2.82822 )
+scale = Vector2( 1.09739, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tilemap/ReaperAnimate/ReaperArea"]
+position = Vector2( -2.69995, 1.8855 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="TBDPath" type="Path2D" parent="tilemap"]
 curve = SubResource( 1 )
 
 [node name="TBDSpawnLocation" type="PathFollow2D" parent="tilemap/TBDPath"]
 position = Vector2( 1037.21, 333.905 )
 rotation = -1.50665
+[connection signal="body_entered" from="tilemap/ReaperAnimate/ReaperArea" to="." method="_on_ReaperArea_body_entered"]

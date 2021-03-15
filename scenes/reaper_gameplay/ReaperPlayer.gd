@@ -21,3 +21,11 @@ func spawn_tbd():
 	add_child(tbd)
 
 	tbd.position = $tilemap/TBDPath/TBDSpawnLocation.position
+
+
+func _on_ReaperArea_body_entered(body):
+	var collider = body.get_name()
+	print(collider)
+	if collider == "TBDIndependent":
+		print("caught the TBD!")
+		#load win screen
