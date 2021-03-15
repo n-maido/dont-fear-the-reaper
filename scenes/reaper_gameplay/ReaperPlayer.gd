@@ -1,9 +1,9 @@
-extends Node2D
+extends Node
 
 var tbd_scene = preload("res://scenes/reaper_gameplay/tbd_independent.tscn")
 var tbd #this will be an independently moving tbd
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	randomize()
 	spawn_tbd()

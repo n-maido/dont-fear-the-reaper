@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/reaper_gameplay/ReaperPlayer.gd" type="Script" id=1]
-[ext_resource path="res://scenes/TBD/TBD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/tilemap/tilemap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/reaper/ReaperAnimated.tscn" type="PackedScene" id=4]
 
@@ -10,7 +9,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1037.21, 333.905, 0, 0, 0, 0, 1051.33, 114.129, 0, 0, 0, 0, 1523.14, 118.161, 0, 0, 0, 0, 1565.49, 481.095, 0, 0, 0, 0, 1882.04, 495.209, 0, 0, 0, 0, 1880.03, 696.84, 0, 0, 0, 0, 1708.64, 712.97, 0, 0, 0, 0, 1710.66, 850.078, 0, 0, 0, 0, 1202.55, 835.964, 0, 0, 0, 0, 1196.5, 733.133, 0, 0, 0, 0, 506.927, 731.117, 0, 0, 0, 0, 492.813, 837.981, 0, 0, 0, 0, 765.014, 854.111, 0, 0, 0, 0, 758.965, 1045.66, 0, 0, 0, 0, 432.324, 1041.63, 0, 0, 0, 0, 424.259, 916.616, 0, 0, 0, 0, 103.667, 910.568, 0, 0, 0, 0, 117.781, 837.981, 0, 0, 0, 0, 383.933, 831.932, 0, 0, 0, 0, 383.933, 743.215, 0, 0, 0, 0, 391.998, 638.367, 0, 0, 0, 0, 1053.34, 612.155, 0, 0, 0, 0, 1037.75, 334.902, 0, 0, 0, 0, 1037.21, 333.905 )
 }
 
-[node name="ReaperPlayer" type="Node2D"]
+[node name="ReaperPlayer" type="Node"]
 script = ExtResource( 1 )
 
 [node name="tilemap" parent="." instance=ExtResource( 3 )]
@@ -25,7 +24,3 @@ curve = SubResource( 1 )
 [node name="TBDSpawnLocation" type="PathFollow2D" parent="tilemap/TBDPath"]
 position = Vector2( 1037.21, 333.905 )
 rotation = -1.50665
-
-[node name="TBDIndependent" parent="tilemap" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 1147.28, 523.222 )
