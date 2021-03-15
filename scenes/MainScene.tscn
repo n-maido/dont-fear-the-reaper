@@ -1,7 +1,15 @@
+<<<<<<< HEAD
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/tilemap/tilemap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/reaper/ReaperAnimated.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/timer/TimerScene.tscn" type="PackedScene" id=3]
+=======
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/tilemap/tilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/reaper/ReaperAnimated.tscn" type="PackedScene" id=2]
+>>>>>>> af4b3e71d91f8c1581e5953a95af6ef794fe4414
 
 [node name="MainScene" type="Node2D"]
 
@@ -10,3 +18,8 @@
 [node name="ReaperAnimate" parent="." instance=ExtResource( 2 )]
 position = Vector2( 224.547, 259.689 )
 scale = Vector2( 0.64996, 0.529383 )
+<<<<<<< HEAD
+
+[node name="TimerScene" parent="." instance=ExtResource( 3 )]
+=======
+>>>>>>> af4b3e71d91f8c1581e5953a95af6ef794fe4414
