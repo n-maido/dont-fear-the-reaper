@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const GRAVITY = 10
-var speed = 80
+var speed = 200
 const FLOOR = Vector2(0, -1)
 
 var velocity = Vector2()
@@ -10,6 +10,7 @@ var direction
 var x_speed
 var y_speed
 var coin_flip #determines which direction and which axis to move on
+var reaper_detected = false
 
 const FRICTION = 15
 
@@ -42,7 +43,8 @@ func _physics_process(delta):
 		
 	velocity = move_and_slide(velocity)
 	
-	if is_on_wall():
+	if is_on_wall() or reaper_detected:
+		reaper_detected = false
 		direction = direction * -1
 		coin_flip = heads_or_tails()
 		if coin_flip == "heads":
@@ -59,3 +61,9 @@ func heads_or_tails():
 		return "tails"
 	else:
 		return "heads"
+
+
+func _on_Area2D_body_entered(body):
+	reaper_detected = true
+	print("reaper detected")
+	
