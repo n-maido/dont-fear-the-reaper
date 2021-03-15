@@ -37,6 +37,12 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="PlayerCamera" type="Camera2D" parent="tilemap/ReaperAnimate"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+
 [node name="TBDPath" type="Path2D" parent="tilemap"]
 curve = SubResource( 2 )
 
