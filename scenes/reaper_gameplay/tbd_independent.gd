@@ -11,6 +11,7 @@ var x_speed
 var y_speed
 var coin_flip #determines which direction and which axis to move on
 var reaper_detected = false
+var collider
 
 const FRICTION = 15
 
@@ -67,3 +68,10 @@ func _on_Area2D_body_entered(body):
 	reaper_detected = true
 	print("reaper detected")
 	
+
+
+func _on_TBDBox_entered(body):
+	#load win screen
+	collider = body.get_parent()
+	if collider.is_in_group("reaper-player"):
+		print("caught by reaper!")

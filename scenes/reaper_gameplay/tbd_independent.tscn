@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprites/TBD/tbd_left_right.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 22.2456, 21.8311 )
+extents = Vector2( 22.4626, 36.8881 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "TBD_left"
@@ -44,14 +44,20 @@ radius = 248.832
 [node name="TBDIndependent" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
+[node name="TBDBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TBDBox"]
+position = Vector2( -3.38678, 0.842558 )
+shape = SubResource( 1 )
+
 [node name="TBDIndependent" type="Sprite" parent="."]
 scale = Vector2( 2.59375, 2.45238 )
 texture = ExtResource( 2 )
 hframes = 12
 frame = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -12.8456, 17.4312 )
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( -2.82596, 0.842566 )
 shape = SubResource( 1 )
 
 [node name="TBDAnimation" type="AnimationPlayer" parent="."]
@@ -62,5 +68,10 @@ anims/TBD_right = SubResource( 3 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -1.44922, -1.44922 )
 shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="body_entered" from="TBDBox" to="." method="_on_TBDBox_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
