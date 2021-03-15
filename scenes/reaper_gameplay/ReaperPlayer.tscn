@@ -18,6 +18,9 @@ script = ExtResource( 1 )
 
 [node name="tilemap" parent="." instance=ExtResource( 3 )]
 
+[node name="CanvasModulate" type="CanvasModulate" parent="tilemap"]
+color = Color( 0, 0, 0, 1 )
+
 [node name="ReaperAnimate" parent="tilemap" groups=[
 "reaper-player",
 ] instance=ExtResource( 4 )]
@@ -46,6 +49,8 @@ drag_margin_v_enabled = true
 
 [node name="Light2D" type="Light2D" parent="tilemap/ReaperAnimate"]
 texture = ExtResource( 2 )
+texture_scale = 2.0
+energy = 1.25
 shadow_enabled = true
 
 [node name="TBDPath" type="Path2D" parent="tilemap"]
