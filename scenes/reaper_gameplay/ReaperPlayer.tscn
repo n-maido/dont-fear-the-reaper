@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/reaper_gameplay/ReaperPlayer.gd" type="Script" id=1]
+[ext_resource path="res://common_assets/textures/2DLight.png" type="Texture" id=2]
 [ext_resource path="res://scenes/tilemap/tilemap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/reaper/ReaperAnimated.tscn" type="PackedScene" id=4]
 
@@ -42,6 +43,10 @@ current = true
 zoom = Vector2( 0.5, 0.5 )
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
+
+[node name="Light2D" type="Light2D" parent="tilemap/ReaperAnimate"]
+texture = ExtResource( 2 )
+shadow_enabled = true
 
 [node name="TBDPath" type="Path2D" parent="tilemap"]
 curve = SubResource( 2 )
