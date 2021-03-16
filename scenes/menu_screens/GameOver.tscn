@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://common_assets/home_screen.png" type="Texture" id=1]
+
+[node name="Control" type="Control"]
+margin_left = 9.0
+margin_top = 13.0
+margin_right = 19.0
+margin_bottom = 27.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 252.0
+margin_top = 169.0
+margin_right = 1636.0
+margin_bottom = 839.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+margin_left = 271.427
+margin_top = 59.4489
+margin_right = 1227.43
+margin_bottom = 511.449
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/TextureRect"]
+margin_left = 278.0
+margin_top = 288.0
+margin_right = 833.0
+margin_bottom = 431.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/TextureRect/ColorRect"]
+margin_right = 443.0
+margin_bottom = 107.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Game Over
+"
+align = 1
+uppercase = true
