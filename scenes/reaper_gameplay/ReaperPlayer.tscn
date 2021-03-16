@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/reaper/ReaperAnimated.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 35.0233, 59.3053 )
+extents = Vector2( 32.7882, 28.096 )
 
 [sub_resource type="Curve2D" id=2]
 _data = {
@@ -28,14 +28,11 @@ position = Vector2( 238.88, 141.161 )
 scale = Vector2( 0.410661, 0.392031 )
 
 [node name="ReaperArea" type="Area2D" parent="tilemap/ReaperAnimate"]
-position = Vector2( -1.34998, -2.82822 )
-scale = Vector2( 1.09739, 1 )
-__meta__ = {
-"_edit_lock_": true
-}
+position = Vector2( -1.3501, -55.5123 )
+scale = Vector2( 0.902594, 1.71423 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tilemap/ReaperAnimate/ReaperArea"]
-position = Vector2( -2.69995, 1.8855 )
+position = Vector2( 0.482728, 35.5447 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -48,10 +45,14 @@ drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 
 [node name="Light2D" type="Light2D" parent="tilemap/ReaperAnimate"]
+position = Vector2( 0.698486, 1.09753 )
 texture = ExtResource( 2 )
 texture_scale = 2.0
 energy = 1.25
 shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="TBDPath" type="Path2D" parent="tilemap"]
 curve = SubResource( 2 )
