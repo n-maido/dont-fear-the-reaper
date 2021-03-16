@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://common_assets/home_screen.png" type="Texture" id=1]
 [ext_resource path="res://scenes/buttons/NewGameButton.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/buttons/OptionsButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/animation/FadeIn.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/title/titlescreen.gd" type="Script" id=7]
+[ext_resource path="res://scenes/yt1s.com - Royalty Free Music Aftermath Horror Kevin MacLeod(1).ogg" type="AudioStream" id=8]
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 1, 0.027451, 0.027451, 1 )
@@ -75,7 +76,7 @@ margin_right = 1722.0
 margin_bottom = 87.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/focus = SubResource( 3 )
-scene_to_load = "res://scenes/MainScene.tscn"
+scene_to_load = "res://scenes/narrative/reaper_narr.tscn"
 
 [node name="Label" parent="Menu/CenterRow/Buttons/NewGameButton" index="0"]
 margin_left = -6.79029
@@ -113,6 +114,10 @@ align = 1
 
 [node name="FadeIn" parent="." instance=ExtResource( 6 )]
 visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
 
 [editable path="Menu/CenterRow/Buttons/NewGameButton"]
