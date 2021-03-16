@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://common_assets/home_screen.png" type="Texture" id=1]
 [ext_resource path="res://scenes/buttons/NewGameButton.tscn" type="PackedScene" id=2]
@@ -7,6 +7,18 @@
 [ext_resource path="res://scenes/buttons/OptionsButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/animation/FadeIn.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/title/titlescreen.gd" type="Script" id=7]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 0.027451, 0.027451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.988235, 0.0588235, 0.0588235, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 0.0117647, 0.0117647, 1 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -61,23 +73,27 @@ alignment = 1
 margin_top = 27.0
 margin_right = 1722.0
 margin_bottom = 87.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
 scene_to_load = "res://scenes/MainScene.tscn"
 
 [node name="Label" parent="Menu/CenterRow/Buttons/NewGameButton" index="0"]
-margin_left = -8.90906
-margin_top = -7.1272
-margin_right = -8.90906
-margin_bottom = 9.8728
+margin_left = -6.79029
+margin_top = -2.88935
+margin_right = -6.79028
+margin_bottom = 14.1107
 
 [node name="ContinueButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
 margin_top = 107.0
 margin_right = 1722.0
 margin_bottom = 167.0
+custom_styles/focus = SubResource( 6 )
 
 [node name="OptionsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
 margin_top = 187.0
 margin_right = 1722.0
 margin_bottom = 247.0
+custom_styles/focus = SubResource( 5 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Menu/CenterRow"]
 margin_left = 1726.0

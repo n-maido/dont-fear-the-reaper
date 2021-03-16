@@ -19,3 +19,4 @@ scale = Vector2( 0.64996, 0.529383 )
 visible = false
 
 [node name="Control" parent="." instance=ExtResource( 4 )]
+visible = false
