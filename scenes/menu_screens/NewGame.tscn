@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://common_assets/fonts/Retro Gaming.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/menu_screens/CenterContainer.gd" type="Script" id=2]
 [ext_resource path="res://scenes/menu_screens/return_title.gd" type="Script" id=3]
+[ext_resource path="res://scenes/timer/Button.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -47,13 +48,7 @@ custom_fonts/font = SubResource( 1 )
 text = "PAUSE"
 align = 1
 
-[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 81.0
-margin_right = 330.0
-margin_bottom = 126.0
-rect_min_size = Vector2( 100, 0 )
-custom_fonts/font = SubResource( 2 )
-text = "Continue"
+[node name="Button" parent="CenterContainer/VBoxContainer" instance=ExtResource( 4 )]
 
 [node name="Button2" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 130.0
@@ -68,6 +63,5 @@ margin_right = 330.0
 margin_bottom = 224.0
 custom_fonts/font = SubResource( 2 )
 text = "Restart"
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button2" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button3" to="." method="_on_Button_pressed"]
