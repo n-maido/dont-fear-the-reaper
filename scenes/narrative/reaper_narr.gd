@@ -1,6 +1,7 @@
-extends Node2D
+extends Control
 
 var dialog = preload("res://scenes/narrative/dialog.tscn")
+#var skip = preload("res://scenes/narrative/SkipButton.tscn")
 
 const images = [
 	preload("res://scenes/narrative/assets/hell.jpg"),
@@ -8,6 +9,7 @@ const images = [
 ]
 
 var reaper_dialog
+#var reaper_skip
 
 func _ready():
 	reaper_dialog = dialog.instance()
@@ -20,6 +22,10 @@ func _ready():
 		'Anyways, back to the list. It looks like Tom is next...'
 	]
 	add_child(reaper_dialog)
+	
+	
+#	reaper_skip = skip.instance()
+#	add_child(reaper_skip)
 
 
 
@@ -31,5 +37,6 @@ func load_background():
 		$BackgroundImage.set_texture(images[1])
 	else:
 		$BackgroundImage.set_texture(images[0])
-	
 
+func _on_ReaperSkip_pressed():
+	get_tree().change_scene("res://scenes/reaper_gameplay/ReaperPlayer.tscn")

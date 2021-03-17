@@ -29,3 +29,11 @@ func _on_ReaperArea_body_entered(body):
 	if collider == "TBDIndependent":
 		print("caught the TBD!")
 		#load win screen
+
+
+func _on_ExitArea_body_entered(body):
+	var escapee = body.get_name()
+	if escapee == "TBDIndependent":
+		print("The TBD has escaped")
+		#load losing screen here
+
