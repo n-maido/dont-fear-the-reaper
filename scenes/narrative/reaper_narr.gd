@@ -34,5 +34,4 @@ func load_background():
 		$BackgroundImage.set_texture(images[0])
 	
 func _input(event):
-	if Input.is_action_pressed("ui_select"):
-		get_tree().change_scene("res://scenes/reaper_gameplay/ReaperPlayer.tscn")
+	pass 
