@@ -56,5 +56,4 @@ func _on_BackButton_pressed():
 	load_dialog()
 
 
-func _on_SkipButton_pressed():
-	pass # Replace with function body.
+
