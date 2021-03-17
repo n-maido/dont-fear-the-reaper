@@ -1,11 +1,11 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/narrative/assets/hell.jpg" type="Texture" id=1]
 [ext_resource path="res://scenes/narrative/dialog.gd" type="Script" id=2]
 [ext_resource path="res://scenes/narrative/assets/mainlevbuild.png" type="Texture" id=3]
 [ext_resource path="res://scenes/narrative/assets/Next_Idle.png" type="Texture" id=4]
 [ext_resource path="res://scenes/narrative/assets/Previous_Idle.png" type="Texture" id=5]
-[ext_resource path="res://scenes/narrative/assets/skip-background.png" type="Texture" id=6]
+[ext_resource path="res://scenes/narrative/SkipButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://common_assets/fonts/Retro Gaming.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="TileSet" id=1]
@@ -119,16 +119,6 @@ scancode = 16777231
 [sub_resource type="ShortCut" id=6]
 shortcut = SubResource( 5 )
 
-[sub_resource type="InputEventKey" id=7]
-scancode = 32
-
-[sub_resource type="ShortCut" id=8]
-shortcut = SubResource( 7 )
-
-[sub_resource type="DynamicFont" id=9]
-size = 20
-font_data = ExtResource( 7 )
-
 [node name="Dialog" type="Control"]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -195,34 +185,8 @@ texture_focused = ExtResource( 5 )
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="SkipButton" type="TextureButton" parent="."]
-anchor_left = 37.78
-anchor_top = 23.739
-anchor_right = 37.78
-anchor_bottom = 23.739
-margin_left = 0.0175781
-margin_top = -0.0175171
-margin_right = 190.018
-margin_bottom = 73.9825
-rect_scale = Vector2( 0.619679, 0.575584 )
-shortcut = SubResource( 8 )
-texture_normal = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SkipText" type="RichTextLabel" parent="SkipButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 27.0
-margin_top = 22.0
-custom_fonts/normal_font = SubResource( 9 )
-bbcode_enabled = true
-bbcode_text = "Skip Intro"
-text = "Skip Intro"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="SkipButton" parent="." instance=ExtResource( 6 )]
+visible = false
 [connection signal="pressed" from="NextButton" to="." method="_on_NextButton_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

@@ -1,10 +1,11 @@
 extends KinematicBody2D
 
 # Declare member variables here. Examples:
-var speed : int = 200
-const ACCELERATION = 15
-const MAX_SPEED = 450
-const FRICTION = 15
+# var speed : int = 200
+var speed = 200
+var acceleration = 15
+var max_speed = 450
+var friction = 15
 var vel = Vector2.ZERO		# velocity - how many pixels/second we are moving
 
 onready var animationPlayer = get_node("ReaperAnimation")
@@ -23,11 +24,11 @@ func _physics_process(delta):
 			animationPlayer.play("run_right")
 		else:
 			animationPlayer.play("run_left")
-		vel += input_vector * ACCELERATION
-		vel = vel.clamped(MAX_SPEED)
+		vel += input_vector * acceleration
+		vel = vel.clamped(max_speed)
 	else:
 		animationPlayer.stop()
-		vel = vel.move_toward(Vector2.ZERO, FRICTION)
+		vel = vel.move_toward(Vector2.ZERO, friction)
 	
 	vel = move_and_slide(vel) 
 	
