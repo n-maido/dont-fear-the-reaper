@@ -1,5 +1,8 @@
 extends Control
 
+var skip_intro = preload("res://scenes/narrative/assets/skip.png")
+var start_game = preload("res://scenes/narrative/assets/start.png")
+
 # store dialogue lines here
 var phrases = [
 	'Welcome to the narration template.',
@@ -21,13 +24,7 @@ func load_dialog():
 		$BackButton.visible = false
 	else: 
 		$BackButton.visible = true
-	
-	if phrase_index == phrases.size() - 1:
-		$NextButton.visible = false
-		$SkipButton/SkipText.bbcode_text = 'Start Game'
-	else:
-		$NextButton.visible = true
-		$SkipButton/SkipText.bbcode_text = 'Skip Intro'
+		
 	# check if index is in range
 	if phrase_index < phrases.size():
 		finished = false
@@ -42,6 +39,14 @@ func load_dialog():
 	else:
 		queue_free() # end dialog
 
+func _process(delta):
+	if phrase_index == phrases.size() - 1:
+		$NextButton.visible = false
+		$SkipButton.texture_normal = start_game
+	else:
+		$NextButton.visible = true
+		$SkipButton.texture_normal = skip_intro
+		
 func _on_Tween_tween_completed(object, key):
 	finished = true
 
@@ -56,5 +61,4 @@ func _on_BackButton_pressed():
 	load_dialog()
 
 
-func _on_SkipButton_pressed():
-	pass # Replace with function body.
+

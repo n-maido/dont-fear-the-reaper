@@ -1,43 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://scenes/narrative/assets/skip-background.png" type="Texture" id=1]
-[ext_resource path="res://common_assets/fonts/Retro Gaming.ttf" type="DynamicFontData" id=2]
-
-[sub_resource type="InputEventKey" id=1]
-scancode = 32
-
-[sub_resource type="ShortCut" id=2]
-shortcut = SubResource( 1 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 20
-font_data = ExtResource( 2 )
+[ext_resource path="res://scenes/narrative/assets/start.png" type="Texture" id=1]
 
 [node name="SkipButton" type="TextureButton"]
-anchor_left = 37.78
-anchor_top = 23.739
-anchor_right = 37.78
-anchor_bottom = 23.739
-margin_left = 0.0175781
-margin_top = -0.0175171
-margin_right = 190.018
-margin_bottom = 73.9825
-rect_scale = Vector2( 0.619679, 0.575584 )
-shortcut = SubResource( 2 )
+margin_left = 1475.1
+margin_top = 953.687
+margin_right = 1665.1
+margin_bottom = 1027.69
 texture_normal = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SkipText" type="RichTextLabel" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 27.0
-margin_top = 22.0
-custom_fonts/normal_font = SubResource( 3 )
-bbcode_enabled = true
-bbcode_text = "Skip Intro"
-text = "Skip Intro"
 __meta__ = {
 "_edit_use_anchors_": false
 }
