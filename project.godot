@@ -16,7 +16,6 @@ _global_script_class_icons={
 [application]
 
 config/name="Don't Fear the Reaper!"
-run/main_scene="res://scenes/MainScene.tscn"
 config/icon="res://icon.png"
 
 [display]
