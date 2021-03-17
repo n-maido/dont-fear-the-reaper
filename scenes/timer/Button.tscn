@@ -2,12 +2,12 @@
 
 [ext_resource path="res://common_assets/fonts/Retro Gaming.ttf" type="DynamicFontData" id=1]
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 0, 0, 1 )
 
-[sub_resource type="StyleBoxLine" id=3]
+[sub_resource type="StyleBoxLine" id=2]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 30
 font_data = ExtResource( 1 )
 
@@ -16,9 +16,9 @@ margin_top = 81.0
 margin_right = 330.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 100, 0 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/focus = SubResource( 3 )
-custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Continue"
 __meta__ = {
 "_edit_use_anchors_": false

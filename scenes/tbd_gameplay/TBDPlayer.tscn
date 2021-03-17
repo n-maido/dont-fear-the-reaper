@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/TBD/TBD.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/tilemap/tilemap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/tbd_gameplay/Reaper_independent.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/timer/TimerScene.tscn" type="PackedScene" id=4]
+
+[node name="TBDPlayer" type="Node2D"]
+
+[node name="tilemap" parent="." instance=ExtResource( 2 )]
+
+[node name="TBD" parent="tilemap" instance=ExtResource( 1 )]
+position = Vector2( 736.667, 514.529 )
+scale = Vector2( 0.661686, 0.570881 )
+
+[node name="ReaperIndependent" parent="tilemap" instance=ExtResource( 3 )]
+position = Vector2( 392.859, 421.585 )
+scale = Vector2( 0.6875, 0.5 )
+
+[node name="TimerScene" parent="." instance=ExtResource( 4 )]

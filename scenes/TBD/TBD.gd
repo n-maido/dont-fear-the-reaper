@@ -3,7 +3,7 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 var speed : int = 200
 const ACCELERATION = 15
-const MAX_SPEED = 450
+const MAX_SPEED = 170
 const FRICTION = 15
 var vel = Vector2.ZERO		# velocity - how many pixels/second we are moving
 
