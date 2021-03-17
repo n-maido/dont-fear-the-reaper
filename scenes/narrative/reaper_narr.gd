@@ -35,4 +35,4 @@ func load_background():
 	
 func _input(event):
 	if Input.is_action_pressed("ui_select"):
-		get_tree().change_scene("res://scenes/MainScene.tscn")
+		get_tree().change_scene("res://scenes/reaper_gameplay/ReaperPlayer.tscn")

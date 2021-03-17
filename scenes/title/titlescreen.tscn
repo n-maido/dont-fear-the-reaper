@@ -9,19 +9,19 @@
 [ext_resource path="res://scenes/title/titlescreen.gd" type="Script" id=7]
 [ext_resource path="res://scenes/yt1s.com - Royalty Free Music Aftermath Horror Kevin MacLeod(1).ogg" type="AudioStream" id=8]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 0.027451, 0.027451, 1 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.988235, 0.0588235, 0.0588235, 1 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 1, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 1, 0.0117647, 0.0117647, 1 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=5]
 size = 35
 font_data = ExtResource( 4 )
 
@@ -74,9 +74,9 @@ alignment = 1
 margin_top = 27.0
 margin_right = 1722.0
 margin_bottom = 87.0
-custom_styles/hover = SubResource( 2 )
-custom_styles/focus = SubResource( 3 )
-scene_to_load = "res://scenes/narrative/reaper_narr.tscn"
+custom_styles/hover = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+scene_to_load = "res://scenes/Play_as/Play_As.tscn"
 
 [node name="Label" parent="Menu/CenterRow/Buttons/NewGameButton" index="0"]
 margin_left = -6.79029
@@ -88,13 +88,13 @@ margin_bottom = 14.1107
 margin_top = 107.0
 margin_right = 1722.0
 margin_bottom = 167.0
-custom_styles/focus = SubResource( 6 )
+custom_styles/focus = SubResource( 3 )
 
 [node name="OptionsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
 margin_top = 187.0
 margin_right = 1722.0
 margin_bottom = 247.0
-custom_styles/focus = SubResource( 5 )
+custom_styles/focus = SubResource( 4 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Menu/CenterRow"]
 margin_left = 1726.0
@@ -106,7 +106,7 @@ margin_top = 734.0
 margin_right = 1726.0
 margin_bottom = 1009.0
 size_flags_vertical = 7
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "Version 0.0.1
 "
