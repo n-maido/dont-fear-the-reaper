@@ -19,6 +19,7 @@ var reaper_dialog
 #var reaper_skip
 
 func _ready():
+	set_process_input(true)
 	reaper_dialog = dialog.instance()
 	reaper_dialog.phrases = [
 		'Press the arrow buttons, or use the arrow keys on your keyboard to navigate. Or, press SPACE to skip the introduction',
