@@ -1,0 +1,134 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/timer/LabelScene.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/Play_as/Play_As.gd" type="Script" id=2]
+[ext_resource path="res://common_assets/a68b05cb7a2760a83ab5600d2b87eb11.jpg" type="Texture" id=3]
+[ext_resource path="res://common_assets/43c5e03a2abc6260b9c5fb6eecdf7900.jpg" type="Texture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 0.0117647, 0.0117647, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0509804, 0.00392157, 0.00392157, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0627451, 0, 0, 1 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Container" type="ColorRect" parent="."]
+margin_right = 1915.0
+margin_bottom = 1073.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Container"]
+anchor_bottom = 0.019
+margin_left = 256.0
+margin_top = 125.0
+margin_right = 727.0
+margin_bottom = 818.613
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Container/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -42.2855
+margin_top = 300.575
+margin_right = 50.7145
+margin_bottom = 9.57489
+texture = ExtResource( 3 )
+
+[node name="ColorRect5" type="ColorRect" parent="Container"]
+anchor_bottom = 0.019
+margin_left = 259.0
+margin_top = 15.0
+margin_right = 1577.0
+margin_bottom = 95.613
+color = Color( 0.0196078, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Container/ColorRect5"]
+margin_right = 1313.0
+margin_bottom = 99.0
+custom_fonts/font = ExtResource( 1 )
+text = "CHOOSE YOUR CHARACTER"
+align = 1
+valign = 1
+
+[node name="ColorRect2" type="ColorRect" parent="Container"]
+anchor_bottom = 0.019
+margin_left = 1080.0
+margin_top = 128.0
+margin_right = 1582.0
+margin_bottom = 826.613
+color = Color( 0.956863, 0.0235294, 0.0235294, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="Container/ColorRect2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 61.0
+margin_bottom = 224.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReaperRect" type="ColorRect" parent="Container"]
+margin_left = 161.265
+margin_top = 883.02
+margin_right = 834.265
+margin_bottom = 997.02
+rect_pivot_offset = Vector2( 441.845, 57 )
+color = Color( 0.819608, 0.101961, 0.101961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reaper" type="Button" parent="Container/ReaperRect"]
+margin_left = -0.00012207
+margin_top = -2.24475
+margin_right = 676.0
+margin_bottom = 109.755
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "REAPER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="Container"]
+margin_left = 994.132
+margin_top = 883.021
+margin_right = 1667.13
+margin_bottom = 997.021
+rect_pivot_offset = Vector2( 441.845, 57 )
+color = Color( 0.819608, 0.101961, 0.101961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tom" type="Button" parent="Container/ColorRect4"]
+margin_right = 674.0
+margin_bottom = 112.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = ExtResource( 1 )
+text = "TOM"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Container/ReaperRect/Reaper" to="." method="_on_Reaper_pressed"]
+[connection signal="pressed" from="Container/ColorRect4/Tom" to="." method="_on_Tom_pressed"]
