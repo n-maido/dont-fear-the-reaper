@@ -1,6 +1,14 @@
-extends Node2D
+extends Control
+
+
+var fade = preload("res://scenes/animation/FadeIn.tscn")
+var fade_anim
+
+var skip_intro = preload("res://scenes/narrative/assets/skip.png")
+var start_game = preload("res://scenes/narrative/assets/start.png")
 
 var dialog = preload("res://scenes/narrative/dialog.tscn")
+#var skip = preload("res://scenes/narrative/SkipButton.tscn")
 
 const images = [
 	preload("res://scenes/narrative/assets/hell.jpg"),
@@ -8,6 +16,7 @@ const images = [
 ]
 
 var reaper_dialog
+#var reaper_skip
 
 func _ready():
 	set_process_input(true)
@@ -21,17 +30,36 @@ func _ready():
 		'Anyways, back to the list. It looks like Tom is next...'
 	]
 	add_child(reaper_dialog)
-
+	
+#	fade_anim = fade.instance()
+#	add_child(fade_anim)
 
 
 func _process(delta):
 	load_background()
+	load_skip_button()
 
 func load_background():
 	if reaper_dialog.phrase_index >= 2  and reaper_dialog.phrase_index <= 5:
 		$BackgroundImage.set_texture(images[1])
 	else:
 		$BackgroundImage.set_texture(images[0])
-	
-func _input(event):
-	pass 
+
+func load_skip_button():
+	if reaper_dialog.phrase_index == reaper_dialog.phrases.size() - 1:
+		$ReaperSkip.texture_normal = start_game
+	else:
+		$ReaperSkip.texture_normal = skip_intro
+
+
+func _on_FadeIn_fade_finished():
+	get_tree().change_scene("res://scenes/reaper_gameplay/ReaperPlayer.tscn")
+
+
+func _on_ReaperSkip_pressed():
+	print("Skip pressed!")
+#	fade_anim.show()
+#	fade_anim.fade_in()
+#	get_tree().change_scene("res://scenes/reaper_gameplay/ReaperPlayer.tscn")
+	$FadeIn.show()
+	$FadeIn.fade_in()
