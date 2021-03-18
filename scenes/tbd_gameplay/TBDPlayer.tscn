@@ -1,20 +1,61 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/TBD/TBD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/tilemap/tilemap.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/tbd_gameplay/Reaper_independent.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/timer/TimerScene.tscn" type="PackedScene" id=4]
+[ext_resource path="res://common_assets/textures/2DLight.png" type="Texture" id=5]
+[ext_resource path="res://scenes/tbd_gameplay/TBDPlayer.gd" type="Script" id=6]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 51.625
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 25.8878, 38.7916 )
 
 [node name="TBDPlayer" type="Node2D"]
+script = ExtResource( 6 )
 
 [node name="tilemap" parent="." instance=ExtResource( 2 )]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="tilemap"]
+color = Color( 0, 0, 0, 1 )
 
 [node name="TBD" parent="tilemap" instance=ExtResource( 1 )]
 position = Vector2( 736.667, 514.529 )
 scale = Vector2( 0.661686, 0.570881 )
+
+[node name="PlayerCamera" type="Camera2D" parent="tilemap/TBD"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+
+[node name="Light2D" type="Light2D" parent="tilemap/TBD"]
+texture = ExtResource( 5 )
+texture_scale = 2.0
+energy = 1.25
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TBDArea" type="Area2D" parent="tilemap/TBD"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tilemap/TBD/TBDArea"]
+position = Vector2( -12.8077, 0.353455 )
+shape = SubResource( 2 )
 
 [node name="ReaperIndependent" parent="tilemap" instance=ExtResource( 3 )]
 position = Vector2( 392.859, 421.585 )
 scale = Vector2( 0.6875, 0.5 )
 
 [node name="TimerScene" parent="." instance=ExtResource( 4 )]
+
+[node name="ExitArea" type="Area2D" parent="."]
+
+[node name="ExitCollision" type="CollisionShape2D" parent="ExitArea"]
+position = Vector2( 1623.32, 1126.82 )
+shape = SubResource( 1 )
+[connection signal="body_entered" from="tilemap/TBD/TBDArea" to="." method="_on_TBDArea_body_entered"]
+[connection signal="body_entered" from="ExitArea" to="." method="_on_ExitArea_body_entered"]

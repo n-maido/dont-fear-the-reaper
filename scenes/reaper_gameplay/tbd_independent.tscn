@@ -54,13 +54,13 @@ position = Vector2( -3.38678, 0.842558 )
 shape = SubResource( 1 )
 
 [node name="TBDIndependent" type="Sprite" parent="."]
-scale = Vector2( 2.59375, 2.45238 )
+scale = Vector2( 1.75, 1.75 )
 texture = ExtResource( 2 )
 hframes = 12
 frame = 6
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( -2.82596, 0.842566 )
+position = Vector2( -3.38678, -1.68112 )
 shape = SubResource( 1 )
 
 [node name="TBDAnimation" type="AnimationPlayer" parent="."]

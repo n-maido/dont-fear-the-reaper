@@ -1,5 +1,8 @@
 extends Node2D
 
+var skip_intro = preload("res://scenes/narrative/assets/skip.png")
+var start_game = preload("res://scenes/narrative/assets/start.png")
+
 var dialog = preload("res://scenes/narrative/dialog.tscn")
 
 const images = [
@@ -29,6 +32,7 @@ func _ready():
 
 func _process(delta):
 	load_background()
+	load_skip_button()
 
 func load_background():
 	if tbd_dialog.phrase_index == 3:
@@ -41,5 +45,22 @@ func load_background():
 		$BackgroundImage.set_texture(images[3])
 	else:
 		$BackgroundImage.set_texture(images[0])
+
+func load_skip_button():
+	if tbd_dialog.phrase_index == tbd_dialog.phrases.size() - 1:
+		$TBDSkip.texture_normal = start_game
+	else:
+		$TBDSkip.texture_normal = skip_intro
+
+
+func _on_FadeIn_fade_finished():
+	get_tree().change_scene("res://scenes/tbd_gameplay/TBDPlayer.tscn")
 	
+func _on_TBDSkip_pressed():
+	print("Skip pressed!")
+	#fade into tbd gameplay
+	$FadeIn.show()
+	$FadeIn.fade_in()
+
+
 

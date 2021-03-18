@@ -13,8 +13,8 @@ func _ready():
 	#set reaper speed
 	$tilemap/ReaperAnimate.speed = 100
 	$tilemap/ReaperAnimate.acceleration = 7
-	$tilemap/ReaperAnimate.max_speed = 250
-	$tilemap/ReaperAnimate.friction = 20
+	$tilemap/ReaperAnimate.max_speed = 275
+	$tilemap/ReaperAnimate.friction = 15
 	
 #	fade_anim = fade.instance()
 #	add_child(fade_anim)
@@ -23,7 +23,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
-#	pass
+#	$TimerScene/Time.position.x = $tilemap/ReaperAnimate.position.x
+#	$TimerScene/Time.position.y = $tilemap/ReaperAnimate.position.y
 
 # spawn the tbd in a random location
 func spawn_tbd():
@@ -41,11 +42,14 @@ func _on_ReaperArea_body_entered(body):
 	if collider == "TBDIndependent":
 		print("caught the TBD!")
 		#load win screen
+		get_tree().change_scene("res://scenes/reaper_gameplay/reaper_win.tscn")
+
 
 
 func _on_ExitArea_body_entered(body):
 	var escapee = body.get_name()
+	print(escapee, " has reached the exit")
 	if escapee == "TBDIndependent":
-		print("The TBD has escaped")
 		#load losing screen here
+		get_tree().change_scene("res://scenes/reaper_gameplay/reaper_lose.tscn")
 
