@@ -27,10 +27,10 @@ position = Vector2( 736.667, 514.529 )
 scale = Vector2( 0.661686, 0.570881 )
 
 [node name="TimerRect" parent="tilemap/TBD" instance=ExtResource( 7 )]
-margin_left = -454.256
-margin_top = -156.983
-margin_right = -117.256
-margin_bottom = -102.983
+margin_left = -322.683
+margin_top = -284.068
+margin_right = 14.3173
+margin_bottom = -230.068
 
 [node name="PlayerCamera" type="Camera2D" parent="tilemap/TBD"]
 current = true

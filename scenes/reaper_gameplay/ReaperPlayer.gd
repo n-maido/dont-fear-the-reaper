@@ -41,7 +41,7 @@ func _on_ReaperArea_body_entered(body):
 	print(collider)
 	if collider == "TBDIndependent":
 		end_game()
-		print("caught the TBD! Score: ", Globals.score)
+#		print("caught the TBD! Score: ", Globals.score)
 		#load win screen
 		get_tree().change_scene("res://scenes/reaper_gameplay/reaper_win.tscn")
 
@@ -58,4 +58,4 @@ func _on_ExitArea_body_entered(body):
 func end_game():
 	# stop timer and save the score
 	$tilemap/ReaperAnimate/TimerRect/Timer.stop()
-	Globals.score = $tilemap/ReaperAnimate/TimerRect.count
+ 	Globals.score = $tilemap/ReaperAnimate/TimerRect.count
