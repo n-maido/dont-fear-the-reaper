@@ -28,7 +28,7 @@ color = Color( 0, 0, 0, 1 )
 "reaper-player",
 ] instance=ExtResource( 4 )]
 position = Vector2( 238.88, 141.161 )
-scale = Vector2( 0.410661, 0.392031 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="ReaperArea" type="Area2D" parent="tilemap/ReaperAnimate"]
 position = Vector2( -1.3501, -55.5123 )
