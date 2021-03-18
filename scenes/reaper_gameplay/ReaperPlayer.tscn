@@ -4,10 +4,10 @@
 [ext_resource path="res://common_assets/textures/2DLight.png" type="Texture" id=2]
 [ext_resource path="res://scenes/tilemap/tilemap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/reaper/ReaperAnimated.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/timer/TimerScene.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/timer/TimerRect.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 29.4914, 29.5649 )
+extents = Vector2( 26.56, 68.5545 )
 
 [sub_resource type="Curve2D" id=2]
 _data = {
@@ -32,17 +32,20 @@ color = Color( 0, 0, 0, 1 )
 position = Vector2( 238.88, 141.161 )
 scale = Vector2( 0.6, 0.6 )
 
+[node name="ColorRect" parent="tilemap/ReaperAnimate" instance=ExtResource( 5 )]
+margin_left = -391.467
+margin_top = -231.935
+margin_right = -54.4667
+margin_bottom = -177.935
+
 [node name="ReaperArea" type="Area2D" parent="tilemap/ReaperAnimate"]
 position = Vector2( -35.5818, -13.1578 )
 rotation = 4.76729
 scale = Vector2( 2.24788, 0.778646 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tilemap/ReaperAnimate/ReaperArea"]
-position = Vector2( 0.482728, 35.5447 )
+position = Vector2( -5.12208, 37.873 )
 shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="PlayerCamera" type="Camera2D" parent="tilemap/ReaperAnimate"]
 current = true
@@ -72,7 +75,5 @@ rotation = -1.50665
 [node name="ExitCollision" type="CollisionShape2D" parent="tilemap/ExitArea"]
 position = Vector2( 1622.03, 1122.35 )
 shape = SubResource( 3 )
-
-[node name="TimerScene" parent="." instance=ExtResource( 5 )]
 [connection signal="body_entered" from="tilemap/ReaperAnimate/ReaperArea" to="." method="_on_ReaperArea_body_entered"]
 [connection signal="body_entered" from="tilemap/ExitArea" to="." method="_on_ExitArea_body_entered"]
