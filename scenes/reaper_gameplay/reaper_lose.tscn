@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://common_assets/fonts/Retro Gaming.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://scenes/reaper_gameplay/win_dialog.gd" type="Script" id=2]
+[ext_resource path="res://scenes/reaper_gameplay/lose_dialog.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
 font_data = ExtResource( 1 )
 
-[node name="ReaperWin" type="Control"]
+[node name="ReaperLose" type="Control"]
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 2 )
@@ -26,16 +26,16 @@ __meta__ = {
 [node name="CollisionDialog" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 960.0
+margin_left = 758.0
 margin_top = 473.0
-margin_right = 992.0
+margin_right = 1194.0
 margin_bottom = 474.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 7
 custom_fonts/font = SubResource( 1 )
-text = "Congratulations, you caught Tom."
+text = "Oh no, Tom has escaped!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
