@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/reaper_gameplay/ReaperPlayer.gd" type="Script" id=1]
 [ext_resource path="res://common_assets/textures/2DLight.png" type="Texture" id=2]
 [ext_resource path="res://scenes/tilemap/tilemap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/reaper/ReaperAnimated.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/timer/TimerScene.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 29.4914, 29.5649 )
@@ -22,7 +23,7 @@ script = ExtResource( 1 )
 [node name="tilemap" parent="." instance=ExtResource( 3 )]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="tilemap"]
-visible = false
+z_index = 1
 color = Color( 0, 0, 0, 1 )
 
 [node name="ReaperAnimate" parent="tilemap" groups=[
@@ -71,5 +72,7 @@ rotation = -1.50665
 [node name="ExitCollision" type="CollisionShape2D" parent="tilemap/ExitArea"]
 position = Vector2( 1622.03, 1122.35 )
 shape = SubResource( 3 )
+
+[node name="TimerScene" parent="." instance=ExtResource( 5 )]
 [connection signal="body_entered" from="tilemap/ReaperAnimate/ReaperArea" to="." method="_on_ReaperArea_body_entered"]
 [connection signal="body_entered" from="tilemap/ExitArea" to="." method="_on_ExitArea_body_entered"]
