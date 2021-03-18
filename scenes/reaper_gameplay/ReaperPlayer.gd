@@ -23,7 +23,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
-#	pass
+#	$TimerScene/Time.position.x = $tilemap/ReaperAnimate.position.x
+#	$TimerScene/Time.position.y = $tilemap/ReaperAnimate.position.y
 
 # spawn the tbd in a random location
 func spawn_tbd():
