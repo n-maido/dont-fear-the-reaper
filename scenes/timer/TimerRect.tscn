@@ -1,18 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/timer/LabelScene.tres" type="DynamicFont" id=1]
 [ext_resource path="res://ColorRect.gd" type="Script" id=2]
 
-[node name="ColorRect" type="ColorRect"]
+[sub_resource type="Theme" id=1]
+
+[node name="ColorRect" type="TextureRect"]
 margin_left = 4.0
 margin_top = 2.0
 margin_right = 341.0
 margin_bottom = 56.0
-color = Color( 0.0352941, 0.00392157, 0.00392157, 1 )
+theme = SubResource( 1 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Timer" type="Timer" parent="."]
 

@@ -1,4 +1,4 @@
-extends ColorRect
+extends TextureRect
 
 
 onready var timer = get_node("Timer")
