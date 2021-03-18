@@ -1,7 +1,6 @@
 extends Node
 
 
-# Declare member variables here. Examples:
 var score = 0
 
 
