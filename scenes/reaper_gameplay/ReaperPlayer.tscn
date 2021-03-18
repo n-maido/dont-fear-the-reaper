@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/reaper_gameplay/ReaperPlayer.gd" type="Script" id=1]
 [ext_resource path="res://common_assets/textures/2DLight.png" type="Texture" id=2]
 [ext_resource path="res://scenes/tilemap/tilemap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/reaper/ReaperAnimated.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/timer/TimerRect.tscn" type="PackedScene" id=5]
+[ext_resource path="res://common_assets/music/reaper_gameplay.WAV" type="AudioStream" id=6]
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=1]
 radius = 45.4268
 
 [sub_resource type="Curve2D" id=2]
@@ -45,7 +46,7 @@ scale = Vector2( 1.4564, 1.46261 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tilemap/ReaperAnimate/ReaperArea"]
 position = Vector2( -0.170784, -5.77371 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="PlayerCamera" type="Camera2D" parent="tilemap/ReaperAnimate"]
 current = true
@@ -75,5 +76,9 @@ rotation = -1.50665
 [node name="ExitCollision" type="CollisionShape2D" parent="tilemap/ExitArea"]
 position = Vector2( 1622.03, 1122.35 )
 shape = SubResource( 3 )
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -20.0
 [connection signal="body_entered" from="tilemap/ReaperAnimate/ReaperArea" to="." method="_on_ReaperArea_body_entered"]
 [connection signal="body_entered" from="tilemap/ExitArea" to="." method="_on_ExitArea_body_entered"]

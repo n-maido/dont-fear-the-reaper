@@ -16,6 +16,7 @@ func _ready():
 	$tilemap/ReaperAnimate.max_speed = 275
 	$tilemap/ReaperAnimate.friction = 15
 	
+	$BackgroundMusic.play(12.0) #start playing at 12s in
 #	fade_anim = fade.instance()
 #	add_child(fade_anim)
 #	fade_anim.fade_in()
