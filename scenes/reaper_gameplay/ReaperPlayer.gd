@@ -13,7 +13,7 @@ func _ready():
 	#set reaper speed
 	$tilemap/ReaperAnimate.speed = 100
 	$tilemap/ReaperAnimate.acceleration = 7
-	$tilemap/ReaperAnimate.max_speed = 250
+	$tilemap/ReaperAnimate.max_speed = 275
 	$tilemap/ReaperAnimate.friction = 15
 	
 #	fade_anim = fade.instance()

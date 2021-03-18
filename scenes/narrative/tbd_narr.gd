@@ -53,8 +53,14 @@ func load_skip_button():
 		$TBDSkip.texture_normal = skip_intro
 
 
-
-
+func _on_FadeIn_fade_finished():
+	get_tree().change_scene("res://scenes/tbd_gameplay/TBDPlayer.tscn")
+	
 func _on_TBDSkip_pressed():
 	print("Skip pressed!")
 	#fade into tbd gameplay
+	$FadeIn.show()
+	$FadeIn.fade_in()
+
+
+

@@ -6,8 +6,8 @@
 [ext_resource path="res://scenes/reaper/ReaperAnimated.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/timer/TimerRect.tscn" type="PackedScene" id=5]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 26.56, 68.5545 )
+[sub_resource type="CircleShape2D" id=4]
+radius = 45.4268
 
 [sub_resource type="Curve2D" id=2]
 _data = {
@@ -39,13 +39,13 @@ margin_right = -54.4667
 margin_bottom = -177.935
 
 [node name="ReaperArea" type="Area2D" parent="tilemap/ReaperAnimate"]
-position = Vector2( -35.5818, -13.1578 )
+position = Vector2( -0.0122681, 1.43478 )
 rotation = 4.76729
-scale = Vector2( 2.24788, 0.778646 )
+scale = Vector2( 1.4564, 1.46261 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tilemap/ReaperAnimate/ReaperArea"]
-position = Vector2( -5.12208, 37.873 )
-shape = SubResource( 1 )
+position = Vector2( -0.170784, -5.77371 )
+shape = SubResource( 4 )
 
 [node name="PlayerCamera" type="Camera2D" parent="tilemap/ReaperAnimate"]
 current = true
