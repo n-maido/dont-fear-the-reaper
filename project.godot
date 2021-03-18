@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="Don't Fear the Reaper!"
 config/icon="res://icon.png"
 
+[autoload]
+
+Globals="*res://Globals.gd"
+
 [display]
 
 window/size/width=1920
