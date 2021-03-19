@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/timer/LabelScene.tres" type="DynamicFont" id=1]
+
+[node name="Tutorial" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1917.0
+margin_bottom = 1087.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+margin_left = 333.0
+margin_top = 174.0
+margin_right = 1636.0
+margin_bottom = 856.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="TextEdit" type="Label" parent="ColorRect/ColorRect"]
+margin_left = -4.75684
+margin_top = -16.541
+margin_right = 1307.24
+margin_bottom = 645.459
+custom_fonts/font = ExtResource( 1 )
+text = "Press the Arrow Keys to Move around 
+
+Make sure to escape obstacles 
+
+Best of Luck "
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

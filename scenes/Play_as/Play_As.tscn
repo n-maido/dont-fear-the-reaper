@@ -2,8 +2,8 @@
 
 [ext_resource path="res://scenes/timer/LabelScene.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scenes/Play_as/Play_As.gd" type="Script" id=2]
-[ext_resource path="res://common_assets/43c5e03a2abc6260b9c5fb6eecdf7900.jpg" type="Texture" id=3]
-[ext_resource path="res://common_assets/a68b05cb7a2760a83ab5600d2b87eb11.jpg" type="Texture" id=4]
+[ext_resource path="res://common_assets/2021-03-19_20-49_1-removebg-preview-ConvertImage.png" type="Texture" id=3]
+[ext_resource path="res://common_assets/2021-03-19_20-49-removebg-preview-ConvertImage.png" type="Texture" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 0.0117647, 0.0117647, 1 )
@@ -42,14 +42,22 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="Container/ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -131.416
-margin_top = 176.314
-margin_right = 110.584
-margin_bottom = 0.313721
+margin_left = 14.3783
+margin_top = 137.623
+margin_right = -34.6217
+margin_bottom = -51.3771
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 4 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Container/ColorRect/TextureRect"]
+margin_right = 432.0
+margin_bottom = 554.0
+color = Color( 0.976471, 0.0196078, 0.0196078, 0.376471 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -84,12 +92,20 @@ color = Color( 0, 0, 0, 1 )
 [node name="TextureRect" type="TextureRect" parent="Container/ColorRect2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -68.3137
-margin_top = 55.5334
-margin_right = 43.6863
-margin_bottom = 116.533
+margin_left = 4.0
+margin_top = 129.0
+margin_right = -40.0
+margin_bottom = -25.0
 texture = ExtResource( 3 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Container/ColorRect2/TextureRect"]
+margin_right = 456.0
+margin_bottom = 575.0
+color = Color( 0.980392, 0.0431373, 0.0431373, 0.415686 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -130,8 +146,7 @@ __meta__ = {
 }
 
 [node name="Tom" type="Button" parent="Container/ColorRect4"]
-margin_left = 2.2627
-margin_right = 676.263
+margin_right = 674.0
 margin_bottom = 112.0
 custom_styles/hover = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )

@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://common_assets/fonts/Retro Gaming.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/menu_screens/CenterContainer.gd" type="Script" id=2]
+[ext_resource path="res://scenes/menu_screens/return_title.gd" type="Script" id=3]
+[ext_resource path="res://scenes/timer/Button.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 1 )
+
+[node name="NewGame" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 374.0
+margin_top = 218.0
+margin_right = -342.0
+margin_bottom = -261.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 449.115
+margin_top = 180.921
+margin_right = -460.885
+margin_bottom = -295.079
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_right = 330.0
+margin_bottom = 224.0
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 330.0
+margin_bottom = 77.0
+custom_fonts/font = SubResource( 1 )
+text = "PAUSE"
+align = 1
+
+[node name="Button" parent="CenterContainer/VBoxContainer" instance=ExtResource( 4 )]
+
+[node name="Button2" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 130.0
+margin_right = 330.0
+margin_bottom = 175.0
+custom_fonts/font = SubResource( 2 )
+text = "Quit to Main Men  "
+
+[node name="Button3" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 179.0
+margin_right = 330.0
+margin_bottom = 224.0
+custom_fonts/font = SubResource( 2 )
+text = "Restart"
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button2" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button3" to="." method="_on_Button_pressed"]

@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://common_assets/fonts/Retro Gaming.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/timer/Button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://common_assets/a68b05cb7a2760a83ab5600d2b87eb11.jpg" type="Texture" id=3]
 [ext_resource path="res://scenes/timer/winTBD.gd" type="Script" id=4]
-[ext_resource path="res://scenes/yt1s.com - Royalty Free Music Aftermath Horror Kevin MacLeod(1).ogg" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -97,10 +96,5 @@ margin_right = -100.0
 margin_bottom = 172.0
 custom_styles/normal = SubResource( 3 )
 text = "Exit"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
-volume_db = 1.0
-autoplay = true
 [connection signal="pressed" from="ColorRect/mainMenu" to="." method="_on_mainMenu_pressed"]
 [connection signal="pressed" from="ColorRect/exit" to="." method="_on_exit_pressed"]
