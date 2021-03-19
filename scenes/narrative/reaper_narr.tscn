@@ -25,6 +25,8 @@ __meta__ = {
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = 1.0
-autoplay = true
+
+[node name="Tween" type="Tween" parent="."]
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
 [connection signal="pressed" from="ReaperSkip" to="." method="_on_ReaperSkip_pressed"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

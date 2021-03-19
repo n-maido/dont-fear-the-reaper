@@ -68,8 +68,8 @@ __meta__ = {
 curve = SubResource( 2 )
 
 [node name="TBDSpawnLocation" type="PathFollow2D" parent="tilemap/TBDPath"]
-position = Vector2( 1248.54, 705.327 )
-rotation = -1.50665
+position = Vector2( 1037.4, 241.222 )
+rotation = -1.46162
 
 [node name="ExitArea" type="Area2D" parent="tilemap"]
 
@@ -80,5 +80,8 @@ shape = SubResource( 3 )
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = -20.0
+
+[node name="Tween" type="Tween" parent="."]
 [connection signal="body_entered" from="tilemap/ReaperAnimate/ReaperArea" to="." method="_on_ReaperArea_body_entered"]
 [connection signal="body_entered" from="tilemap/ExitArea" to="." method="_on_ExitArea_body_entered"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
