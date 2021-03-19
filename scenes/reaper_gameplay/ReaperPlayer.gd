@@ -5,7 +5,7 @@ extends Node
 var tbd_scene = preload("res://scenes/reaper_gameplay/tbd_independent.tscn")
 var tbd #this will be an independently moving tbd
 var player_won
-var volume = -20
+var volume = 1
 
 func _ready():
 	randomize()
@@ -17,7 +17,7 @@ func _ready():
 	$tilemap/ReaperAnimate.max_speed = 275
 	$tilemap/ReaperAnimate.friction = 15
 	
-	$BackgroundMusic.play(12.0) #start playing at 12s in
+	$BackgroundMusic.play() 
 	$BackgroundMusic.volume_db = volume
 #	fade_anim = fade.instance()
 #	add_child(fade_anim)
@@ -46,7 +46,7 @@ func _on_ReaperArea_body_entered(body):
 		player_won = true
 		tbd.hide()
 		end_game()
-		print("caught the TBD! Score: ", Globals.score)
+		#print("caught the TBD! Score: ", Globals.score)
 		
 
 

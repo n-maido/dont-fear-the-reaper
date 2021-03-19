@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://common_assets/home_screen.png" type="Texture" id=1]
 [ext_resource path="res://scenes/timer/Button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/timer/LabelScene.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scenes/menu_screens/GameOver.gd" type="Script" id=4]
 
 [node name="Control" type="Control"]
 margin_left = 9.0
 margin_top = 13.0
 margin_right = 19.0
 margin_bottom = 27.0
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -112,3 +114,6 @@ margin_top = 8.95648
 margin_right = 1255.97
 margin_bottom = 53.9565
 text = "Exit"
+[connection signal="pressed" from="ColorRect/HBoxContainer/ColorRect/Button" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="ColorRect/HBoxContainer/ColorRect2/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="ColorRect/HBoxContainer/ColorRect3/Button" to="." method="_on_ExitButton_pressed"]

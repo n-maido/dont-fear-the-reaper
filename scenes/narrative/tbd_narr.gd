@@ -54,7 +54,7 @@ func load_skip_button():
 
 
 func _on_FadeIn_fade_finished():
-	get_tree().change_scene("res://scenes/tbd_gameplay/TBDPlayer.tscn")
+	get_tree().change_scene("res://scenes/tbd_gameplay/TBDPlayerX.tscn")
 	
 func _on_TBDSkip_pressed():
 	print("Skip pressed!")
