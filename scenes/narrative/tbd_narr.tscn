@@ -22,6 +22,7 @@ visible = false
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+volume_db = 1.0
 autoplay = true
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
 [connection signal="pressed" from="TBDSkip" to="." method="_on_TBDSkip_pressed"]
