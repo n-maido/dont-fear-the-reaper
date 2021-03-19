@@ -28,7 +28,7 @@ func _on_ExitArea_body_entered(body):
 func _on_TBDArea_body_entered(body):
 	var collider = body.get_name()
 	print(collider)
-	if collider == "PlayerReaper":
+	if collider == "ReaperIndependent":
 		end_game()
 		#load win screen
 		get_tree().change_scene("res://scenes/tbd_gameplay/tbd_lose.tscn")
@@ -36,4 +36,4 @@ func _on_TBDArea_body_entered(body):
 func end_game():
 	# stop timer and save the score
 	$tilemap/TBD/TimerRect/Timer.stop()
-	# Globals.score = $tilemap/TBD/TimerRect.count
+	Globals.score = $tilemap/TBD/TimerRect.count
