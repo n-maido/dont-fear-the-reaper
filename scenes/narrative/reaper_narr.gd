@@ -6,7 +6,7 @@ var start_game = preload("res://scenes/narrative/assets/start.png")
 
 var dialog = preload("res://scenes/narrative/dialog.tscn")
 #var skip = preload("res://scenes/narrative/SkipButton.tscn")
-var volume = 1
+var volume = 0
 
 const images = [
 	preload("res://scenes/narrative/assets/hell.jpg"),
