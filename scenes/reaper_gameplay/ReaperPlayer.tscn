@@ -1,0 +1,92 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/reaper_gameplay/ReaperPlayer.gd" type="Script" id=1]
+[ext_resource path="res://common_assets/textures/2DLight.png" type="Texture" id=2]
+[ext_resource path="res://scenes/tilemap/tilemap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/reaper/ReaperAnimated.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/timer/TimerRect.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/yt1s.com - Royalty Free Music Aftermath Horror Kevin MacLeod(1).ogg" type="AudioStream" id=6]
+[ext_resource path="res://scenes/animation/FadeIn.tscn" type="PackedScene" id=7]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 45.4268
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1037.4, 241.222, 0, 0, 0, 0, 1051.33, 114.129, 0, 0, 0, 0, 1549.62, 119.044, 0, 0, 0, 0, 1565.47, 307.501, 0, 0, 0, 0, 1206.17, 309.262, 0, 0, 0, 0, 1206.17, 372.668, 0, 0, 0, 0, 1008.97, 384.412, 0, 0, 0, 0, 1006.41, 456.135, 0, 0, 0, 0, 827.101, 457.416, 0, 0, 0, 0, 823.259, 631.6, 0, 0, 0, 0, 994.881, 630.32, 0, 0, 0, 0, 996.162, 672.585, 0, 0, 0, 0, 1217.73, 675.146, 0, 0, 0, 0, 1220.81, 576.784, 0, 0, 0, 0, 1221.58, 490.46, 0, 0, 0, 0, 1307.39, 490.46, 0, 0, 0, 0, 1303.55, 680.013, 0, 0, 0, 0, 1592.23, 684.88, 0, 0, 0, 0, 1597.35, 741.234, 0, 0, 0, 0, 670.079, 737.392, 0, 0, 0, 0, 670.079, 477.396, 0, 0, 0, 0, 457.216, 475.603, 0, 0, 0, 0, 476.939, 844.464, 0, 0, 0, 0, 774.077, 847.025, 0, 0, 0, 0, 767.417, 1058.35, 0, 0, 0, 0, 429.295, 1046.82, 0, 0, 0, 0, 411.364, 909.783, 0, 0, 0, 0, 380.626, 823.971, 0, 0, 0, 0, 367.306, 728.682, 0, 0, 0, 0, 296.864, 719.717, 0, 0, 0, 0, 323.503, 418.224, 0, 0, 0, 0, 668.03, 405.417, 0, 0, 0, 0, 674.946, 139.53, 0, 0, 0, 0, 741.546, 140.81, 0, 0, 0, 0, 744.107, 373.91, 0, 0, 0, 0, 844.007, 382.875, 0, 0, 0, 0, 864.499, 358.541, 0, 0, 0, 0, 1033.56, 358.541, 0, 0, 0, 0, 1038.68, 241.991, 0, 0, 0, 0, 1037.4, 241.222 )
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 34.4935, 49.2772 )
+
+[node name="ReaperPlayer" type="Node"]
+script = ExtResource( 1 )
+
+[node name="tilemap" parent="." instance=ExtResource( 3 )]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="tilemap"]
+z_index = 1
+color = Color( 0, 0, 0, 1 )
+
+[node name="ReaperAnimate" parent="tilemap" groups=[
+"reaper-player",
+] instance=ExtResource( 4 )]
+position = Vector2( 238.88, 141.161 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="TimerRect" parent="tilemap/ReaperAnimate" instance=ExtResource( 5 )]
+margin_left = -327.826
+margin_top = -202.236
+margin_right = 9.17438
+margin_bottom = -148.236
+
+[node name="ReaperArea" type="Area2D" parent="tilemap/ReaperAnimate"]
+position = Vector2( -0.0122681, 1.43478 )
+rotation = 4.76729
+scale = Vector2( 1.4564, 1.46261 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tilemap/ReaperAnimate/ReaperArea"]
+position = Vector2( -0.170784, -5.77371 )
+shape = SubResource( 1 )
+
+[node name="PlayerCamera" type="Camera2D" parent="tilemap/ReaperAnimate"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+
+[node name="Light2D" type="Light2D" parent="tilemap/ReaperAnimate"]
+position = Vector2( 0.698486, 1.09753 )
+texture = ExtResource( 2 )
+texture_scale = 2.0
+energy = 1.25
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TBDPath" type="Path2D" parent="tilemap"]
+curve = SubResource( 2 )
+
+[node name="TBDSpawnLocation" type="PathFollow2D" parent="tilemap/TBDPath"]
+position = Vector2( 1037.4, 241.222 )
+rotation = -1.46162
+
+[node name="ExitArea" type="Area2D" parent="tilemap"]
+
+[node name="ExitCollision" type="CollisionShape2D" parent="tilemap/ExitArea"]
+position = Vector2( 1622.03, 1122.35 )
+shape = SubResource( 3 )
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = 1.0
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="FadeIn" parent="." instance=ExtResource( 7 )]
+visible = false
+[connection signal="body_entered" from="tilemap/ReaperAnimate/ReaperArea" to="." method="_on_ReaperArea_body_entered"]
+[connection signal="body_entered" from="tilemap/ExitArea" to="." method="_on_ExitArea_body_entered"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
+[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]

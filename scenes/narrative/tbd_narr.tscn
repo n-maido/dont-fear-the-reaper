@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/narrative/tbd_narr.gd" type="Script" id=1]
+[ext_resource path="res://scenes/narrative/SkipButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/animation/FadeIn.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/yt1s.com - Royalty Free Music Aftermath Horror Kevin MacLeod(1).ogg" type="AudioStream" id=4]
+
+[node name="TBDNarr" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FadeIn" parent="." instance=ExtResource( 3 )]
+visible = false
+
+[node name="TBDSkip" parent="." instance=ExtResource( 2 )]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = 1.0
+autoplay = true
+[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
+[connection signal="pressed" from="TBDSkip" to="." method="_on_TBDSkip_pressed"]

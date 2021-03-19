@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/reaper_gameplay/tbd_independent.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/TBD/tbd_left_right.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 22.4626, 36.8881 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "TBD_left"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("TBDIndependent:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 6, 7, 8, 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TBDIndependent:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 248.832
+
+[node name="TBDIndependent" type="KinematicBody2D" groups=[
+"tbd-independent",
+]]
+script = ExtResource( 1 )
+
+[node name="TBDBox" type="Area2D" parent="."]
+scale = Vector2( 1.09514, -1.06029 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TBDBox"]
+position = Vector2( -3.38678, 0.842558 )
+shape = SubResource( 1 )
+
+[node name="TBDIndependent" type="Sprite" parent="."]
+scale = Vector2( 1.75, 1.75 )
+texture = ExtResource( 2 )
+hframes = 12
+frame = 6
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( -3.38678, -1.68112 )
+shape = SubResource( 1 )
+
+[node name="TBDAnimation" type="AnimationPlayer" parent="."]
+autoplay = "TBD_right"
+anims/TBD_left = SubResource( 2 )
+anims/TBD_right = SubResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -1.44922, -1.44922 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

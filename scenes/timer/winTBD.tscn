@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://common_assets/fonts/Retro Gaming.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/timer/Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://common_assets/43c5e03a2abc6260b9c5fb6eecdf7900.jpg" type="Texture" id=3]
+[ext_resource path="res://scenes/timer/winTBD.gd" type="Script" id=4]
+[ext_resource path="res://scenes/yt1s.com - Royalty Free Music Aftermath Horror Kevin MacLeod(1).ogg" type="AudioStream" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 1 )
+
+[node name="WinScreenTBD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -400.0
+margin_top = -200.0
+margin_right = 400.0
+margin_bottom = 200.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tom" type="Sprite" parent="ColorRect/VBoxContainer"]
+position = Vector2( 368, -84 )
+scale = Vector2( 0.500237, 0.466775 )
+texture = ExtResource( 3 )
+
+[node name="win" type="Label" parent="ColorRect/VBoxContainer"]
+margin_top = 42.0
+margin_right = 800.0
+margin_bottom = 170.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "YOU WIN !!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="Label" parent="ColorRect/VBoxContainer"]
+margin_top = 174.0
+margin_right = 800.0
+margin_bottom = 357.0
+custom_fonts/font = SubResource( 2 )
+text = "120
+"
+align = 1
+valign = 1
+
+[node name="mainMenu" parent="ColorRect" instance=ExtResource( 2 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -814.0
+margin_top = 140.0
+margin_right = 814.0
+margin_bottom = 204.0
+custom_styles/normal = SubResource( 3 )
+text = "Main Menu"
+
+[node name="exit" parent="ColorRect" instance=ExtResource( 2 )]
+anchor_left = 0.0760417
+anchor_top = 0.596296
+anchor_right = 0.976042
+anchor_bottom = 0.596296
+margin_left = 1.52588e-05
+margin_top = 108.0
+margin_right = -100.0
+margin_bottom = 172.0
+custom_styles/normal = SubResource( 3 )
+text = "Exit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = 1.0
+autoplay = true
+[connection signal="pressed" from="ColorRect/mainMenu" to="." method="_on_mainMenu_pressed"]
+[connection signal="pressed" from="ColorRect/exit" to="." method="_on_exit_pressed"]
