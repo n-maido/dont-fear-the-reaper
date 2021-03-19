@@ -40,7 +40,8 @@ func _on_ReaperArea_body_entered(body):
 	var collider = body.get_name()
 	print(collider)
 	if collider == "TBDIndependent":
-		print("caught the TBD!")
+		end_game()
+#		print("caught the TBD! Score: ", Globals.score)
 		#load win screen
 		get_tree().change_scene("res://scenes/reaper_gameplay/reaper_win.tscn")
 
@@ -50,6 +51,11 @@ func _on_ExitArea_body_entered(body):
 	var escapee = body.get_name()
 	print(escapee, " has reached the exit")
 	if escapee == "TBDIndependent":
+		end_game()
 		#load losing screen here
 		get_tree().change_scene("res://scenes/reaper_gameplay/reaper_lose.tscn")
 
+func end_game():
+	# stop timer and save the score
+	$tilemap/ReaperAnimate/TimerRect/Timer.stop()
+ 	Globals.score = $tilemap/ReaperAnimate/TimerRect.count
