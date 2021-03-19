@@ -33,10 +33,10 @@ position = Vector2( 238.88, 141.161 )
 scale = Vector2( 0.6, 0.6 )
 
 [node name="TimerRect" parent="tilemap/ReaperAnimate" instance=ExtResource( 5 )]
-margin_left = -391.467
-margin_top = -231.935
-margin_right = -54.4667
-margin_bottom = -177.935
+margin_left = -327.826
+margin_top = -202.236
+margin_right = 9.17438
+margin_bottom = -148.236
 
 [node name="ReaperArea" type="Area2D" parent="tilemap/ReaperAnimate"]
 position = Vector2( -0.0122681, 1.43478 )
@@ -67,8 +67,8 @@ __meta__ = {
 curve = SubResource( 2 )
 
 [node name="TBDSpawnLocation" type="PathFollow2D" parent="tilemap/TBDPath"]
-position = Vector2( 1248.54, 705.327 )
-rotation = -1.50665
+position = Vector2( 1037.4, 241.222 )
+rotation = -1.46162
 
 [node name="ExitArea" type="Area2D" parent="tilemap"]
 
