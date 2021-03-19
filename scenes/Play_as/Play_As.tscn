@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/timer/LabelScene.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scenes/Play_as/Play_As.gd" type="Script" id=2]
-[ext_resource path="res://common_assets/a68b05cb7a2760a83ab5600d2b87eb11.jpg" type="Texture" id=3]
+[ext_resource path="res://scenes/tbd_gameplay/Sprite.tscn" type="PackedScene" id=3]
 [ext_resource path="res://common_assets/43c5e03a2abc6260b9c5fb6eecdf7900.jpg" type="Texture" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -30,23 +30,18 @@ __meta__ = {
 
 [node name="ColorRect" type="ColorRect" parent="Container"]
 anchor_bottom = 0.019
-margin_left = 256.0
-margin_top = 125.0
-margin_right = 727.0
-margin_bottom = 818.613
+margin_left = 227.459
+margin_top = 120.243
+margin_right = 698.459
+margin_bottom = 813.856
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="Container/ColorRect"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -42.2855
-margin_top = 300.575
-margin_right = 50.7145
-margin_bottom = 9.57489
-texture = ExtResource( 3 )
+[node name="Sprite" parent="Container/ColorRect" instance=ExtResource( 3 )]
+position = Vector2( 261.626, 409.087 )
+scale = Vector2( 5.75683, 3.55532 )
 
 [node name="ColorRect5" type="ColorRect" parent="Container"]
 anchor_bottom = 0.019
