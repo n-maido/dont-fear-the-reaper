@@ -2,8 +2,8 @@
 
 [ext_resource path="res://scenes/timer/LabelScene.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scenes/Play_as/Play_As.gd" type="Script" id=2]
-[ext_resource path="res://common_assets/2021-03-19_20-49_1-removebg-preview.png" type="Texture" id=3]
-[ext_resource path="res://common_assets/2021-03-19_20-49-removebg-preview.png" type="Texture" id=4]
+[ext_resource path="res://common_assets/2021-03-19_20-49_1-removebg-preview-ConvertImage.png" type="Texture" id=3]
+[ext_resource path="res://common_assets/2021-03-19_20-49-removebg-preview-ConvertImage.png" type="Texture" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 0.0117647, 0.0117647, 1 )
@@ -54,6 +54,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect" type="ColorRect" parent="Container/ColorRect/TextureRect"]
+margin_right = 432.0
+margin_bottom = 554.0
+color = Color( 0.976471, 0.0196078, 0.0196078, 0.376471 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ColorRect5" type="ColorRect" parent="Container"]
 anchor_bottom = 0.019
 margin_left = 259.0
@@ -84,12 +92,20 @@ color = Color( 0, 0, 0, 1 )
 [node name="TextureRect" type="TextureRect" parent="Container/ColorRect2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -17.0
-margin_top = 119.0
-margin_right = 44.0
-margin_bottom = -35.0
+margin_left = 4.0
+margin_top = 129.0
+margin_right = -40.0
+margin_bottom = -25.0
 texture = ExtResource( 3 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Container/ColorRect2/TextureRect"]
+margin_right = 456.0
+margin_bottom = 575.0
+color = Color( 0.980392, 0.0431373, 0.0431373, 0.415686 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
