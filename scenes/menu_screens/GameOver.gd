@@ -2,7 +2,7 @@ extends Control
 
 func _ready():
 	$ColorRect/TextureRect/ColorRect/Label/TimeScore.set_text("Score: " + str(Globals.score))
-	$ColorRect/HBoxContainer/ColorRect/Button.grab_focus()
+	$ColorRect/restart.grab_focus()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
