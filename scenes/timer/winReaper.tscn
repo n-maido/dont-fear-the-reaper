@@ -97,6 +97,4 @@ margin_bottom = 172.0
 custom_styles/normal = SubResource( 3 )
 text = "Exit"
 [connection signal="pressed" from="ColorRect/mainMenu" to="." method="_on_mainMenu_pressed"]
-[connection signal="pressed" from="ColorRect/mainMenu" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="ColorRect/exit" to="." method="_on_mainMenu_pressed"]
 [connection signal="pressed" from="ColorRect/exit" to="." method="_on_exit_pressed"]
