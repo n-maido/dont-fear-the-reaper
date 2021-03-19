@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://common_assets/fonts/Retro Gaming.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/timer/Button.tscn" type="PackedScene" id=2]
@@ -13,7 +13,10 @@ font_data = ExtResource( 1 )
 size = 70
 font_data = ExtResource( 1 )
 
-[node name="WinScreen" type="Control"]
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 1 )
+
+[node name="WinScreenTBD" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
@@ -21,62 +24,79 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -328.5
-margin_top = -199.195
-margin_right = 328.5
-margin_bottom = 300.805
+margin_left = -400.0
+margin_top = -200.0
+margin_right = 400.0
+margin_bottom = 200.0
+alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 27.0
-margin_top = 43.0
-margin_right = 630.0
-margin_bottom = 456.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Tom" type="Sprite" parent="CenterContainer/VBoxContainer"]
-position = Vector2( 272.857, -109.875 )
+[node name="Tom" type="Sprite" parent="ColorRect/VBoxContainer"]
+position = Vector2( 368, -84 )
 scale = Vector2( 0.500237, 0.466775 )
 texture = ExtResource( 3 )
 
-[node name="win" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_right = 603.0
-margin_bottom = 128.0
+[node name="win" type="Label" parent="ColorRect/VBoxContainer"]
+margin_top = 42.0
+margin_right = 800.0
+margin_bottom = 170.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "YOU WIN !!"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="score" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 132.0
-margin_right = 603.0
-margin_bottom = 315.0
+[node name="score" type="Label" parent="ColorRect/VBoxContainer"]
+margin_top = 174.0
+margin_right = 800.0
+margin_bottom = 357.0
 custom_fonts/font = SubResource( 2 )
 text = "120
 "
 align = 1
+valign = 1
 
-[node name="newGame" parent="CenterContainer/VBoxContainer" instance=ExtResource( 2 )]
-margin_top = 319.0
-margin_right = 603.0
-margin_bottom = 364.0
+[node name="mainMenu" parent="ColorRect" instance=ExtResource( 2 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -814.0
+margin_top = 140.0
+margin_right = 814.0
+margin_bottom = 204.0
+custom_styles/normal = SubResource( 3 )
 text = "Main Menu"
 
-[node name="exit" parent="CenterContainer/VBoxContainer" instance=ExtResource( 2 )]
-margin_top = 368.0
-margin_right = 603.0
-margin_bottom = 413.0
+[node name="exit" parent="ColorRect" instance=ExtResource( 2 )]
+anchor_left = 0.0760417
+anchor_top = 0.596296
+anchor_right = 0.976042
+anchor_bottom = 0.596296
+margin_left = 1.52588e-05
+margin_top = 108.0
+margin_right = -100.0
+margin_bottom = 172.0
+custom_styles/normal = SubResource( 3 )
 text = "Exit"
-[connection signal="pressed" from="CenterContainer/VBoxContainer/newGame" to="." method="_on_newGame_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="ColorRect/mainMenu" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="ColorRect/mainMenu" to="." method="_on_mainMenu_pressed"]
+[connection signal="pressed" from="ColorRect/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="ColorRect/exit" to="." method="_on_mainMenu_pressed"]
