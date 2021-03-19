@@ -16,6 +16,8 @@ var phrase_index = 0
 # keep track of when a phrase completes
 var finished = false
 
+var fade_color = Color(0, 0, 0, 0)
+
 func _ready():
 	load_dialog()
 
@@ -40,6 +42,7 @@ func load_dialog():
 		queue_free() # end dialog
 
 func _process(delta):
+
 	if phrase_index == phrases.size() - 1:
 		$NextButton.visible = false
 		$SkipButton.texture_normal = start_game
