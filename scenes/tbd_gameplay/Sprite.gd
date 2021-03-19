@@ -2,7 +2,7 @@ extends Sprite
 
 var speed = 150
 var path : = PoolVector2Array()
-onready var animationPlayer = get_node("ReaperPlayer/ReaperAnimation")
+onready var animationPlayer = get_node("PlayerReaper/ReaperAnimation")
 
 func _process(delta):
 	# Calculate the movement distance for this frame
