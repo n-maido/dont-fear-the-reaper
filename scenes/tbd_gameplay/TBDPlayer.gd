@@ -27,6 +27,6 @@ func _on_ExitArea_body_entered(body):
 func _on_TBDArea_body_entered(body):
 	var collider = body.get_name()
 	print(collider)
-	if collider == "ReaperIndependent":
+	if collider == "ReaperPlayer":
 		#load win screen
 		get_tree().change_scene("res://scenes/tbd_gameplay/tbd_lose.tscn")

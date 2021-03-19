@@ -1,56 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Sprites/reaper/reaper_right_left.png" type="Texture" id=1]
+[ext_resource path="res://scenes/reaper/Sprite.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/reaper/ReaperAnimated.tres.gd" type="Script" id=2]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.2101, 23.1862 )
-
-[sub_resource type="Animation" id=2]
-length = 0.3
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2 ]
-}
-
-[sub_resource type="Animation" id=3]
-length = 0.3
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 4 ),
-"update": 1,
-"values": [ 3, 4, 5 ]
-}
+[ext_resource path="res://scenes/reaper/ReaperAnimation.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/reaper/CollisionShape2D.tscn" type="PackedScene" id=4]
 
 [node name="ReaperAnimate" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-hframes = 6
-frame = 2
+[node name="Sprite" parent="." instance=ExtResource( 1 )]
+frame = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.342346, 27.4868 )
-scale = Vector2( 1.04915, 1.18325 )
-shape = SubResource( 1 )
+[node name="CollisionShape2D" parent="." instance=ExtResource( 4 )]
 
-[node name="ReaperAnimation" type="AnimationPlayer" parent="."]
-anims/run_left = SubResource( 2 )
-anims/run_right = SubResource( 3 )
+[node name="ReaperAnimation" parent="." instance=ExtResource( 3 )]

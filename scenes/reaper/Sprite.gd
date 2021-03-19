@@ -1,7 +1,8 @@
-extends KinematicBody2D
+extends Sprite
 
 var speed = 150
 var path : = PoolVector2Array()
+onready var animationPlayer = get_node("ReaperPlayer/ReaperAnimation")
 
 func _process(delta):
 	# Calculate the movement distance for this frame
@@ -13,6 +14,12 @@ func _process(delta):
 		if distance_to_walk <= distance_to_next_point:
 			# The player does not have enough movement left to get to the next point.
 			position += position.direction_to(path[0]) * distance_to_walk
+			if position.direction_to(path[0]).x<0:
+				animationPlayer.play("run_left")
+				print("Moving Left")
+			else:
+				animationPlayer.play("run_right")
+				print("Moving Right")
 		else:
 			# The player get to the next point
 			position = path[0]
