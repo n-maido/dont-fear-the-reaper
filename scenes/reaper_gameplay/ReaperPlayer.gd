@@ -44,11 +44,10 @@ func _on_ReaperArea_body_entered(body):
 	print(collider)
 	if collider == "TBDIndependent":
 		player_won = true
+		tbd.hide()
 		end_game()
 		print("caught the TBD! Score: ", Globals.score)
-		#load win screen
-		#get_tree().change_scene("res://scenes/reaper_gameplay/reaper_win.tscn")
-
+		
 
 
 func _on_ExitArea_body_entered(body):
@@ -57,18 +56,16 @@ func _on_ExitArea_body_entered(body):
 	if escapee == "TBDIndependent":
 		player_won = false
 		end_game()
-		#load losing screen here
-		#get_tree().change_scene("res://scenes/reaper_gameplay/reaper_lose.tscn")
-
+		
+		
 func end_game():
 	# stop timer and save the score
 	$tilemap/ReaperAnimate/TimerRect/Timer.stop()
 	Globals.score = $tilemap/ReaperAnimate/TimerRect.count
 	
-	# Use tween to fade out the audio
-	$Tween.interpolate_property($BackgroundMusic, "volume_db", volume, -80, 2, Tween.TRANS_SINE, Tween.EASE_IN, 0)
-	$Tween.start()
-
+	$FadeIn.show()
+	$FadeIn.fade_in()
+	
 
 func _on_Tween_tween_completed(object, key):
 	$BackgroundMusic.stop()
@@ -76,3 +73,11 @@ func _on_Tween_tween_completed(object, key):
 		get_tree().change_scene("res://scenes/reaper_gameplay/reaper_win.tscn")
 	else:
 		get_tree().change_scene("res://scenes/reaper_gameplay/reaper_lose.tscn")
+
+
+
+func _on_FadeIn_fade_finished():
+	# Use tween to fade out the audio
+	$Tween.interpolate_property($BackgroundMusic, "volume_db", volume, -80, 1, Tween.TRANS_SINE, Tween.EASE_IN, 0)
+	$Tween.start()
+	

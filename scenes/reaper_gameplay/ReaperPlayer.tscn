@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/reaper_gameplay/ReaperPlayer.gd" type="Script" id=1]
 [ext_resource path="res://common_assets/textures/2DLight.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/reaper/ReaperAnimated.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/timer/TimerRect.tscn" type="PackedScene" id=5]
 [ext_resource path="res://common_assets/music/reaper_gameplay.WAV" type="AudioStream" id=6]
+[ext_resource path="res://scenes/animation/FadeIn.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 45.4268
@@ -82,6 +83,10 @@ stream = ExtResource( 6 )
 volume_db = -20.0
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="FadeIn" parent="." instance=ExtResource( 7 )]
+visible = false
 [connection signal="body_entered" from="tilemap/ReaperAnimate/ReaperArea" to="." method="_on_ReaperArea_body_entered"]
 [connection signal="body_entered" from="tilemap/ExitArea" to="." method="_on_ExitArea_body_entered"]
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
+[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
