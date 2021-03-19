@@ -1,14 +1,12 @@
 extends Control
 
 
-var fade = preload("res://scenes/animation/FadeIn.tscn")
-var fade_anim
-
 var skip_intro = preload("res://scenes/narrative/assets/skip.png")
 var start_game = preload("res://scenes/narrative/assets/start.png")
 
 var dialog = preload("res://scenes/narrative/dialog.tscn")
 #var skip = preload("res://scenes/narrative/SkipButton.tscn")
+var volume = 1
 
 const images = [
 	preload("res://scenes/narrative/assets/hell.jpg"),
@@ -16,7 +14,7 @@ const images = [
 ]
 
 var reaper_dialog
-#var reaper_skip
+
 
 func _ready():
 	set_process_input(true)
@@ -31,8 +29,9 @@ func _ready():
 	]
 	add_child(reaper_dialog)
 	
-#	fade_anim = fade.instance()
-#	add_child(fade_anim)
+	$BackgroundMusic.volume_db = volume
+	$BackgroundMusic.play()
+
 
 
 func _process(delta):
@@ -52,14 +51,24 @@ func load_skip_button():
 		$ReaperSkip.texture_normal = skip_intro
 
 
-func _on_FadeIn_fade_finished():
+func _on_ReaperSkip_pressed():
+	print("Skip pressed!")
+
+#	get_tree().change_scene("res://scenes/reaper_gameplay/ReaperPlayer.tscn")
+
+	#fade audio
+#	$Tween.interpolate_property($BackgroundMusic, "volume_db", volume, -80, 5, Tween.TRANS_SINE, Tween.EASE_IN, 0)
+#	$Tween.start()
+	$FadeIn.show()
+	$FadeIn.fade_in()
+
+
+
+func _on_Tween_tween_completed(object, key):
+	$BackgroundMusic.stop()
 	get_tree().change_scene("res://scenes/reaper_gameplay/ReaperPlayer.tscn")
 
 
-func _on_ReaperSkip_pressed():
-	print("Skip pressed!")
-#	fade_anim.show()
-#	fade_anim.fade_in()
-#	get_tree().change_scene("res://scenes/reaper_gameplay/ReaperPlayer.tscn")
-	$FadeIn.show()
-	$FadeIn.fade_in()
+func _on_FadeIn_fade_finished():
+	print("fade finished")
+	get_tree().change_scene("res://scenes/reaper_gameplay/ReaperPlayer.tscn")

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/reaper_narrative.wav-1fd377d2d461eff53bccb3bdf3572409.sample"
+
+[deps]
+
+source_file="res://common_assets/music/reaper_narrative.wav"
+dest_files=[ "res://.import/reaper_narrative.wav-1fd377d2d461eff53bccb3bdf3572409.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
