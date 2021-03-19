@@ -36,4 +36,4 @@ func _on_TBDArea_body_entered(body):
 func end_game():
 	# stop timer and save the score
 	$tilemap/TBD/TimerRect/Timer.stop()
-	Globals.score = $tilemap/TBD/TimerRect.count
+	# Globals.score = $tilemap/TBD/TimerRect.count
