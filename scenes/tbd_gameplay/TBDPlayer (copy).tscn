@@ -1,0 +1,87 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scenes/TBD/TBD.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/tilemap/tilemap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/reaper/ReaperAnimation.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/timer/TimerScene.tscn" type="PackedScene" id=4]
+[ext_resource path="res://common_assets/textures/2DLight.png" type="Texture" id=5]
+[ext_resource path="res://scenes/tbd_gameplay/TBDPlayer.gd" type="Script" id=6]
+[ext_resource path="res://scenes/reaper/Sprite.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/reaper/Sprite.gd" type="Script" id=8]
+[ext_resource path="res://scenes/reaper/CollisionShape2D.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/tbd_gameplay/ReaperPlayer.gd" type="Script" id=10]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 51.625
+
+[sub_resource type="NavigationPolygon" id=4]
+vertices = PoolVector2Array( 79.142, 325.999, 23.0787, 331.339, 23.0787, 99.0766, 436.879, 96.4069, 434.209, 165.819, 629.096, 171.158, 634.435, 283.284, 439.549, 277.945, 399.504, 753.148, 84.4813, 747.809, 444.888, 374.054, 452.897, 633.013, 84.4813, 924.008, 79.142, 827.899, 399.504, 833.238, 402.173, 924.008, 1696.97, 619.664, 1897.19, 622.334, 1905.2, 721.112, 1715.66, 723.782, 1614.21, 662.379, 1902.53, 480.841, 1905.2, 539.574, 1686.29, 539.574, 1608.87, 478.171, 631.766, 633.013, 634.435, 747.809, 492.942, 745.139, 1179.05, 1065.5, 1176.38, 830.569, 1357.92, 835.908, 1427.33, 1014.78, 1576.83, 475.501, 1582.17, 576.949, 1301.86, 582.289, 1045.57, 475.501, 1040.23, 590.298, 1219.1, 592.967, 1304.52, 665.049, 1227.1, 673.058, 1539.46, 953.374, 1462.04, 942.695, 1462.04, 822.56, 1712.99, 830.569, 1720.99, 953.374, 1037.56, 352.696, 1032.22, 88.3978, 1574.16, 93.7372, 1203.08, 320.66, 1576.83, 392.741, 1424.66, 390.072, 1419.32, 320.66, 773.259, 830.569, 775.928, 1065.5, 399.504, 1065.5, 495.612, 833.238, 452.897, 478.171, 666.472, 368.714, 661.132, 480.841, 1715.66, 747.809, 1416.65, 742.469, 853.349, 350.026, 1021.54, 395.411, 1021.54, 462.153, 821.313, 462.153, 845.34, 360.705, 730.544, 280.615, 671.811, 99.0766, 815.974, 99.0766, 818.643, 256.588, 815.974, 277.945, 826.652, 606.316, 1008.19, 606.316, 1010.86, 667.718, 661.132, 747.809, 1897.19, 956.044, 1902.53, 1065.5, 1534.12, 1017.45, 1203.08, 376.723, 1200.41, 398.081, 749.232, 360.705, 1363.26, 755.818 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 7, 4 ), PoolIntArray( 0, 4, 7 ), PoolIntArray( 8, 9, 0, 7, 10, 11 ), PoolIntArray( 12, 13, 14, 15 ), PoolIntArray( 16, 17, 18, 19, 20 ), PoolIntArray( 21, 22, 23, 24 ), PoolIntArray( 20, 24, 23, 16 ), PoolIntArray( 25, 26, 27, 11 ), PoolIntArray( 28, 29, 30, 31 ), PoolIntArray( 32, 33, 34, 35 ), PoolIntArray( 36, 35, 34, 37 ), PoolIntArray( 37, 34, 38, 39 ), PoolIntArray( 40, 41, 42, 43, 44 ), PoolIntArray( 45, 46, 47, 48 ), PoolIntArray( 47, 49, 50, 51 ), PoolIntArray( 52, 53, 54, 15, 55 ), PoolIntArray( 27, 55, 15, 14, 8, 11 ), PoolIntArray( 56, 11, 10 ), PoolIntArray( 56, 10, 57, 58 ), PoolIntArray( 20, 19, 59, 60, 38 ), PoolIntArray( 61, 62, 63, 64, 65 ), PoolIntArray( 66, 67, 68, 69, 70 ), PoolIntArray( 71, 72, 73, 74 ), PoolIntArray( 44, 75, 76, 77, 40 ), PoolIntArray( 48, 78, 79, 62, 45 ), PoolIntArray( 57, 67, 66, 80 ), PoolIntArray( 64, 58, 57, 80, 65 ), PoolIntArray( 47, 51, 48 ), PoolIntArray( 61, 45, 62 ), PoolIntArray( 58, 64, 71, 74 ), PoolIntArray( 81, 74, 73, 39 ), PoolIntArray( 81, 39, 38, 60 ), PoolIntArray( 81, 60, 31, 30 ), PoolIntArray( 76, 28, 31, 77 ) ]
+outlines = [ PoolVector2Array( 23.0787, 331.339, 23.0787, 99.0766, 436.879, 96.4069, 434.209, 165.819, 629.096, 171.158, 634.435, 283.284, 439.549, 277.945, 444.888, 374.054, 666.472, 368.714, 671.811, 99.0766, 815.974, 99.0766, 818.643, 256.588, 815.974, 277.945, 730.544, 280.615, 749.232, 360.705, 845.34, 360.705, 853.349, 350.026, 1037.56, 352.696, 1032.22, 88.3978, 1574.16, 93.7372, 1576.83, 392.741, 1424.66, 390.072, 1419.32, 320.66, 1203.08, 320.66, 1203.08, 376.723, 1200.41, 398.081, 1021.54, 395.411, 1021.54, 462.153, 821.313, 462.153, 826.652, 606.316, 1008.19, 606.316, 1010.86, 667.718, 1227.1, 673.058, 1219.1, 592.967, 1040.23, 590.298, 1045.57, 475.501, 1576.83, 475.501, 1582.17, 576.949, 1301.86, 582.289, 1304.52, 665.049, 1614.21, 662.379, 1608.87, 478.171, 1902.53, 480.841, 1905.2, 539.574, 1686.29, 539.574, 1696.97, 619.664, 1897.19, 622.334, 1905.2, 721.112, 1715.66, 723.782, 1715.66, 747.809, 1416.65, 742.469, 1427.33, 1014.78, 1534.12, 1017.45, 1539.46, 953.374, 1462.04, 942.695, 1462.04, 822.56, 1712.99, 830.569, 1720.99, 953.374, 1897.19, 956.044, 1902.53, 1065.5, 1179.05, 1065.5, 1176.38, 830.569, 1357.92, 835.908, 1363.26, 755.818, 661.132, 747.809, 661.132, 480.841, 452.897, 478.171, 452.897, 633.013, 631.766, 633.013, 634.435, 747.809, 492.942, 745.139, 495.612, 833.238, 773.259, 830.569, 775.928, 1065.5, 399.504, 1065.5, 402.173, 924.008, 84.4813, 924.008, 79.142, 827.899, 399.504, 833.238, 399.504, 753.148, 84.4813, 747.809, 79.142, 325.999 ) ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 25.8878, 38.7916 )
+
+[node name="TBDPlayer" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="tilemap" parent="." instance=ExtResource( 2 )]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="tilemap"]
+visible = false
+color = Color( 0, 0, 0, 1 )
+
+[node name="TBD" parent="tilemap" instance=ExtResource( 1 )]
+position = Vector2( 736.667, 514.529 )
+scale = Vector2( 0.661686, 0.570881 )
+
+[node name="PlayerCamera" type="Camera2D" parent="tilemap/TBD"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+
+[node name="Light2D" type="Light2D" parent="tilemap/TBD"]
+texture = ExtResource( 5 )
+texture_scale = 2.0
+energy = 1.25
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TBDArea" type="Area2D" parent="tilemap/TBD"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tilemap/TBD/TBDArea"]
+position = Vector2( -12.8077, 0.353455 )
+shape = SubResource( 1 )
+
+[node name="Navigation2D" type="Navigation2D" parent="tilemap"]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="tilemap/Navigation2D"]
+navpoly = SubResource( 4 )
+
+[node name="Player" parent="tilemap" instance=ExtResource( 7 )]
+position = Vector2( 149.287, 347.963 )
+scale = Vector2( 0.456493, 0.554726 )
+texture = null
+script = ExtResource( 8 )
+
+[node name="ReaperPlayer" type="KinematicBody2D" parent="tilemap/Player"]
+script = ExtResource( 10 )
+
+[node name="CollisionShape2D" parent="tilemap/Player/ReaperPlayer" instance=ExtResource( 9 )]
+
+[node name="ReaperAnimation" parent="tilemap/Player/ReaperPlayer" instance=ExtResource( 3 )]
+
+[node name="Sprite" parent="tilemap/Player/ReaperPlayer" instance=ExtResource( 7 )]
+
+[node name="TimerScene" parent="." instance=ExtResource( 4 )]
+
+[node name="ExitArea" type="Area2D" parent="."]
+
+[node name="ExitCollision" type="CollisionShape2D" parent="ExitArea"]
+position = Vector2( 1623.32, 1126.82 )
+shape = SubResource( 3 )
+[connection signal="body_entered" from="tilemap/TBD/TBDArea" to="." method="_on_TBDArea_body_entered"]
+[connection signal="body_entered" from="ExitArea" to="." method="_on_ExitArea_body_entered"]
